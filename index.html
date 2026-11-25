@@ -1,0 +1,1344 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Espaço da Beleza — Pesquisa de Mercado</title>
+<meta name="description" content="Apresentação interativa da pesquisa de mercado sobre o Espaço da Beleza (IDP · Pesquisa de Mercado · Profa. Carolina Sampaio).">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- Ícones -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-flower" viewBox="0 0 40 40"><path fill="currentColor" fill-rule="evenodd" d="M20 2.5a8.5 8.5 0 0 1 8.3 6.7 8.5 8.5 0 0 1 2.5 16.6 8.5 8.5 0 0 1-10.8 11.7 8.5 8.5 0 0 1-10.8-11.7 8.5 8.5 0 0 1 2.5-16.6A8.5 8.5 0 0 1 20 2.5Zm0 13a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Z"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-fs" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-fsx" viewBox="0 0 24 24"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-restart" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4.5h4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-motion" viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-notes" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h7M9 16h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-exit" viewBox="0 0 24 24"><path d="M14 4h5v16h-5M10 8l-4 4 4 4M6 12h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z" fill="currentColor"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M7 4h3.5v16H7zM13.5 4H17v16h-3.5z" fill="currentColor"/></symbol>
+    <symbol id="i-vol" viewBox="0 0 24 24"><path d="M4 9.5h4l5-4.5v14l-5-4.5H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-mute" viewBox="0 0 24 24"><path d="M4 9.5h4l5-4.5v14l-5-4.5H4z" fill="currentColor"/><path d="M16.5 9.5l5 5M21.5 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-cc" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10.5 10.2a2.4 2.4 0 1 0 0 3.6M17 10.2a2.4 2.4 0 1 0 0 3.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.4a4.3 4.3 0 0 1 7.5 2.4C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-comment" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.1A8 8 0 1 1 20 11.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8.5c0 3.5 2.8 6.5 6.5 6.5l1-1.6-2-1-1 .8a4.7 4.7 0 0 1-2.2-2.2l.8-1-1-2z" fill="currentColor"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="7.5" cy="8" r="1.6" fill="currentColor"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.7 6 11a6 6 0 0 1-12 0c0-4.3 6-11 6-11z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10 11 5 20 4c-1 9-6 15-15 15zM5 19l8-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1.5 0 1.8-1.4 1-2.4-.8-1-.4-2.6 1.2-2.6H17a4 4 0 0 0 4-4c0-5-4-9-9-9z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="7.5" cy="11" r="1.3" fill="currentColor"/><circle cx="10.5" cy="7" r="1.3" fill="currentColor"/><circle cx="15" cy="7.5" r="1.3" fill="currentColor"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9l1.5-5h15L21 9M3 9h18M3 9c0 1.7 1.3 3 3 3s3-1.3 3-3c0 1.7 1.3 3 3 3s3-1.3 3-3c0 1.7 1.3 3 3 3s3-1.3 3-3M5 12v9h14v-9M10 21v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<div id="app">
+
+<!-- ======================================================================
+     TELA INICIAL
+     ====================================================================== -->
+<section id="intro" class="intro" aria-label="Tela inicial">
+  <header class="intro-top">
+    <span data-in style="--d:0"><svg aria-hidden="true"><use href="#i-flower"/></svg>IDP · Pesquisa de Mercado</span>
+    <span data-in style="--d:1">Profa. Carolina Sampaio</span>
+    <span data-in style="--d:2">Brasília · 2026</span>
+  </header>
+
+  <div class="intro-main">
+    <div class="intro-copy">
+      <p class="intro-kicker" data-in style="--d:1">Relatório de pesquisa · versão interativa</p>
+      <h1 class="intro-title" data-in style="--d:2">Espaço <span class="it">da</span><br>Beleza.</h1>
+      <p class="intro-sub" data-in style="--d:3">Pesquisa de mercado sobre comportamento, experiência e fidelização das clientes.</p>
+      <div class="intro-cta-row" data-in style="--d:4">
+        <button id="btnStart" class="btn-start" type="button">Iniciar apresentação <span class="arr" aria-hidden="true">→</span></button>
+        <button id="btnResume" class="intro-resume" type="button" hidden>Retomar do slide <span></span></button>
+      </div>
+      <p class="intro-hint" data-in style="--d:5">Abre em tela cheia. Use <kbd>←</kbd> <kbd>→</kbd> ou <kbd>espaço</kbd> para avançar e <kbd>Esc</kbd> para sair.</p>
+      <div class="intro-links" data-in style="--d:6">
+        <a class="chip-link" href="assets/docs/relatorio-pesquisa-espaco-da-beleza.pdf" target="_blank" rel="noopener">Relatório completo (PDF) ↗</a>
+        <button class="chip-link" type="button" data-open="refs">Referências</button>
+        <button class="chip-link" type="button" id="btnDados">Dados e evidências</button>
+        <button class="chip-link" type="button" data-open="keys">Atalhos e controles</button>
+      </div>
+    </div>
+
+    <div class="intro-art" aria-hidden="true">
+      <figure class="ia-1"><img src="assets/img/loja/expositor.jpg" alt=""></figure>
+      <figure class="ia-2"><img src="assets/img/loja/fachada-rua.jpg" alt=""></figure>
+      <figure class="ia-3"><img src="assets/img/loja/escovas.jpg" alt=""></figure>
+      <div class="intro-badge">
+        <div class="badge-bg"></div>
+        <svg class="badge-ring" viewBox="0 0 200 200"><defs><path id="ringA" d="M100,100 m-82,0 a82,82 0 1,1 164,0 a82,82 0 1,1 -164,0"/></defs><text><textPath href="#ringA" textLength="506" lengthAdjust="spacing">Espaço da Beleza · Pesquisa de Mercado · IDP ·</textPath></text></svg>
+        <div class="badge-logo"><img src="assets/img/marca/logo-espaco-da-beleza.jpg" alt=""></div>
+      </div>
+      <span class="ia-tag">Imagens reais da loja</span>
+    </div>
+  </div>
+
+  <footer class="intro-bottom" aria-label="Integrantes">
+    <div class="marquee" aria-hidden="true">
+      <span>Agatha Yasmin <svg><use href="#i-flower"/></svg> Alice Rodrigues <svg><use href="#i-flower"/></svg> Laila Gebrim <svg><use href="#i-flower"/></svg> Valentina Abib <svg><use href="#i-flower"/></svg> O que faz uma cliente <span class="it">voltar?</span> <svg><use href="#i-flower"/></svg></span>
+      <span>Agatha Yasmin <svg><use href="#i-flower"/></svg> Alice Rodrigues <svg><use href="#i-flower"/></svg> Laila Gebrim <svg><use href="#i-flower"/></svg> Valentina Abib <svg><use href="#i-flower"/></svg> O que faz uma cliente <span class="it">voltar?</span> <svg><use href="#i-flower"/></svg></span>
+    </div>
+    <p class="sr-only">Integrantes: Agatha Yasmin, Alice Rodrigues, Laila Gebrim e Valentina Abib.</p>
+  </footer>
+</section>
+
+<!-- ======================================================================
+     APRESENTAÇÃO
+     ====================================================================== -->
+<main id="deck" class="deck" aria-roledescription="apresentação" aria-label="Apresentação" hidden>
+  <div class="viewport" id="viewport">
+    <div class="stage" id="stage">
+
+<!-- 01 — CAPA ===================================================== -->
+<section class="slide t-ink sl-capa" data-id="capa" data-chapter="1" data-title="Capa">
+  <div class="s-body">
+    <div class="capa-line" aria-hidden="true"></div>
+    <div class="capa-left">
+      <p class="kicker red" data-anim style="--d:0">Pesquisa de mercado · IDP · 2026</p>
+      <h1 class="capa-title" data-split>Espaço <span class="it">da</span><br>Beleza.</h1>
+      <p class="capa-sub" data-anim style="--d:6">Pesquisa de mercado: comportamento, experiência e fidelização.</p>
+    </div>
+    <dl class="capa-meta" data-anim style="--d:8">
+      <div><dt>Instituição</dt><dd>IDP</dd></div>
+      <div><dt>Disciplina</dt><dd>Pesquisa de Mercado</dd></div>
+      <div><dt>Professora</dt><dd>Carolina Sampaio</dd></div>
+      <div class="wide"><dt>Integrantes</dt><dd>Agatha Yasmin · Alice Rodrigues · Laila Gebrim · Valentina Abib</dd></div>
+    </dl>
+    <figure class="capa-video reveal amb" style="--d:2">
+      <video class="ambient" src="assets/video/espaco.mp4" poster="assets/video/espaco-capa.jpg" muted loop playsinline preload="auto" aria-label="Vídeo sem som mostrando o interior da loja"></video>
+      <button class="amb-toggle" type="button" aria-label="Pausar ou retomar o vídeo de fundo"><svg class="ic-pause"><use href="#i-pause"/></svg><svg class="ic-play"><use href="#i-play"/></svg></button>
+    </figure>
+    <div class="capa-badge" data-anim="scale" style="--d:7" aria-hidden="true">
+      <div class="badge-bg"></div>
+      <svg class="badge-ring" viewBox="0 0 200 200"><defs><path id="ringB" d="M100,100 m-82,0 a82,82 0 1,1 164,0 a82,82 0 1,1 -164,0"/></defs><text><textPath href="#ringB" textLength="506" lengthAdjust="spacing">Espaço da Beleza · Cosméticos & Salão ·</textPath></text></svg>
+      <div class="badge-logo"><img src="assets/img/marca/logo-espaco-da-beleza.jpg" alt="Logo do Espaço da Beleza"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 — O CLIENTE E O DESAFIO ===================================== -->
+<section class="slide t-paper2 sl-m2" data-id="cliente-desafio" data-chapter="1" data-title="O cliente e o desafio"
+  data-src="Fonte: relatório da pesquisa (Introdução e 1.1 Problema gerencial). Vídeo real da loja.">
+  <div class="s-body">
+    <div class="m2-left">
+      <p class="kicker red" data-anim style="--d:0">O cliente e o desafio</p>
+      <h2 class="m2-q" data-split>Se comprar cosméticos pela internet é tão fácil, o que faz uma cliente <span class="it red">voltar</span> à loja física?</h2>
+      <div class="m2-client" data-anim style="--d:6">
+        <span class="m2-logo"><img src="assets/img/marca/logo-espaco-da-beleza.jpg" alt="Logo do Espaço da Beleza"></span>
+        <dl class="m2-facts">
+          <div><dt>Quem</dt><dd>Loja de cosméticos e salão de beleza em Brasília</dd></div>
+          <div><dt>Onde</dt><dd>Águas Claras, Guará II e Estação dos Cosméticos (210 Sul)</dd></div>
+          <div><dt>O quê</dt><dd>Produtos nacionais, importados e profissionais, com força em cabelo, e serviços de salão</dd></div>
+        </dl>
+      </div>
+      <div class="m2-prob" data-anim style="--d:8">
+        <div class="m2-vs"><span class="vs-d">Internet · preço e praticidade</span><i aria-hidden="true">×</i><span class="vs-r">Loja física · atendimento e experiência</span></div>
+        <p><b>Problema gerencial:</b> como o Espaço da Beleza pode fazer mais clientes voltarem a comprar nas lojas físicas, sabendo que hoje é fácil comprar cosméticos pela internet, muitas vezes por um preço menor?</p>
+      </div>
+    </div>
+    <div class="player m2-player" data-player data-start-muted data-clip="10" data-anim style="--d:3">
+      <div class="phone"><div class="screen">
+        <video src="assets/video/espaco.mp4" poster="assets/video/espaco-capa.jpg" playsinline preload="metadata" aria-label="Vídeo: um passeio pela loja do Espaço da Beleza"></video>
+        <button class="pbig" type="button" aria-label="Reproduzir trecho do vídeo"><span><svg><use href="#i-play"/></svg></span></button>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 — OBJETIVOS E HIPÓTESES ===================================== -->
+<section class="slide t-ink sl-m3" data-id="objetivos-hipoteses" data-chapter="2" data-title="Objetivos e hipóteses"
+  data-src="Fonte: relatório da pesquisa (1.2 Problema de pesquisa e 1.3 Objetivos). Hipóteses tiradas do plano da empresa."
+  data-more='[["ap-objetivos","Objetivos completos"]]'>
+  <div class="s-body">
+    <div class="m3-left">
+      <p class="kicker red" data-anim style="--d:0">Problema de pesquisa</p>
+      <h2 class="t-h2" data-split>O que queríamos <span class="it">descobrir?</span></h2>
+      <p class="m3-prob" data-anim style="--d:4">Quais fatores levam as consumidoras a <b>escolher</b> o Espaço da Beleza e a <b>voltar</b>, e como o <b>Instagram</b> e as <b>avaliações online</b> entram nessa decisão.</p>
+      <ol class="m3-obj">
+        <li data-anim style="--d:5"><span>01</span>Conhecer o perfil das clientes</li>
+        <li data-anim style="--d:6"><span>02</span>Entender o que influencia a compra</li>
+        <li data-anim style="--d:7"><span>03</span>Descobrir o que gera confiança e fidelização</li>
+        <li data-anim style="--d:8"><span>04</span>Analisar a presença digital da marca</li>
+        <li data-anim style="--d:9"><span>05</span>Propor ações para trazer as clientes de volta</li>
+      </ol>
+    </div>
+    <div class="m3-right">
+      <p class="kicker" data-anim style="--d:3">Nossas hipóteses · tiradas do plano da empresa</p>
+      <div class="m3-cards">
+        <article class="hcard h1c" data-anim style="--d:6"><span class="h-num">H1</span><h3>Preço</h3><p>O preço é o fator que mais pesa na decisão de compra.</p></article>
+        <article class="hcard" data-anim style="--d:10"><span class="h-num">H2</span><h3>Atendimento</h3><p>O atendimento e a orientação são um diferencial da loja física.</p></article>
+        <article class="hcard" data-anim style="--d:14"><span class="h-num">H3</span><h3>Instagram</h3><p>O Instagram aproxima as clientes e estimula a visita à loja.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 — MERCADO E OPORTUNIDADES =================================== -->
+<section class="slide t-ink sl-m4" data-id="mercado" data-chapter="2" data-title="O mercado e suas oportunidades"
+  data-src="Fontes: Euromonitor, via ABIHPEC (mercado e cabelo) · g1, via ABIHPEC (novos estabelecimentos) · IPEDF Codeplan, PDAD-A 2024 (Guará e Águas Claras)."
+  data-more='[["ap-setor","Mais dados do setor"],["ap-regioes","Dados das regiões"]]'>
+  <div class="s-body">
+    <div class="m4-head">
+      <p class="kicker red" data-anim style="--d:0">Dados secundários</p>
+      <h2 class="t-h2" data-split>O mercado e suas <span class="it">oportunidades</span></h2>
+    </div>
+    <div class="m4-grid">
+      <div class="mt m4-a" data-anim style="--d:3">
+        <span class="mt-k">Mercado mundial · 2024</span>
+        <div>
+          <span class="big"><span class="count" data-to="3">3</span><sup>º</sup></span>
+          <p>é a posição do Brasil no mercado de beleza e cuidados pessoais.</p>
+          <p class="m4-sub"><b>US$ <span class="count" data-to="37.4" data-dec="1">37,4</span> bilhões</b> em vendas</p>
+        </div>
+      </div>
+      <div class="mt m4-b" data-anim style="--d:5"><span class="mt-k">Cabelo · 2025</span><div><span class="big">+<span class="count" data-to="9">9</span>%</span><p>de crescimento em cuidados com o cabelo, a categoria mais forte da loja.</p></div></div>
+      <div class="mt m4-c" data-anim style="--d:6"><span class="mt-k">Concorrência · 2025</span><div><span class="big"><span class="count" data-to="235">235</span> <small>mil+</small></span><p>novos estabelecimentos de beleza abertos no país.</p></div></div>
+      <div class="m4-reg" data-anim style="--d:7">
+        <p class="kicker plain">Comprar perto de casa</p>
+        <h3>Nas regiões da loja, as compras do dia a dia ficam no bairro.</h3>
+        <div class="m4-bar"><div class="m4-bl"><span>Guará</span><b><span class="count" data-to="80.6" data-dec="1">80,6</span>%</b></div><div class="bar is-red" style="--d:2"><i style="--v:80.6%"></i></div></div>
+        <div class="m4-bar"><div class="m4-bl"><span>Águas Claras</span><b><span class="count" data-to="81.6" data-dec="1">81,6</span>%</b></div><div class="bar" style="--d:3"><i style="--v:81.6%"></i></div></div>
+        <p class="m4-note">Moradores que compram alimentação, higiene e limpeza na própria região. Não é um dado específico de cosméticos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 — COMO FIZEMOS A PESQUISA =================================== -->
+<section class="slide t-paper2 sl-m5" data-id="metodo" data-chapter="3" data-title="Como fizemos a pesquisa"
+  data-src="Fonte: relatório da pesquisa (2. Coleta: instrumentos, estratégia de divulgação e amostragem)."
+  data-more='[["ap-metodos","Metodologia detalhada"],["ap-instrumentos","Instrumentos"],["ap-coleta","Coleta e amostragem"]]'>
+  <div class="s-body">
+    <div class="m5-head">
+      <p class="kicker red" data-anim style="--d:0">Metodologia</p>
+      <h2 class="t-h2" data-split>Três maneiras de entender <span class="it">o mesmo comportamento.</span></h2>
+    </div>
+    <div class="m5-ev">
+      <button class="evidence ev1" type="button" data-anim style="--d:8" data-full="assets/img/relatorio/p3-instrumentos.png" data-caption="Relatório, p. 2–3 — 2.1 Instrumentos utilizados"><img src="assets/img/relatorio/p3-instrumentos.png" alt="Recorte do relatório: tabela de instrumentos"><span class="ev-tag">Instrumentos <em>↗</em></span></button>
+      <button class="evidence ev2" type="button" data-anim style="--d:9" data-full="assets/img/relatorio/p3-amostragem.png" data-caption="Relatório, p. 3 — 2.3 Amostragem"><img src="assets/img/relatorio/p3-amostragem.png" alt="Recorte do relatório: amostragem"><span class="ev-tag">Amostragem <em>↗</em></span></button>
+    </div>
+    <div class="m5-cols">
+      <article class="mcol" data-anim style="--d:3">
+        <span class="m-n">01</span><span class="m-type q">Quantitativa</span>
+        <h3>Questionário</h3>
+        <p class="m5-big"><b>13</b> respostas · <b>14</b> perguntas</p>
+        <ul><li>De 3 a 18/11/2026, no Google Forms</li><li>Divulgado no WhatsApp: contatos do grupo, WhatsApp da loja e grupo de clientes (pela gerente)</li></ul>
+        <p class="m5-amo"><span>Amostragem</span>Por conveniência, sem sorteio</p>
+      </article>
+      <article class="mcol" data-anim style="--d:5">
+        <span class="m-n">02</span><span class="m-type">Qualitativa</span>
+        <h3>Entrevista em profundidade</h3>
+        <p class="m5-big"><b>1</b> especialista · Zoom</p>
+        <ul><li>Glenda Oliveira, personal shopper de cosméticos</li><li>17/11/2026, gravada com autorização</li></ul>
+        <p class="m5-amo"><span>Amostragem</span>Intencional, pela experiência</p>
+      </article>
+      <article class="mcol" data-anim style="--d:7">
+        <span class="m-n">03</span><span class="m-type">Qualitativa</span>
+        <h3>Netnografia</h3>
+        <p class="m5-big"><b>5</b> posts · <b>29</b> comentários · <b>22</b> avaliações</p>
+        <ul><li>Instagram, com publicações de 29/09 a 18/11/2026, e Google</li><li>Observar o que as pessoas dizem e fazem na internet, sem interagir</li></ul>
+        <p class="m5-amo"><span>Amostragem</span>Seleção intencional</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 06 — QUEM RESPONDEU E COMO COMPRA ============================== -->
+<section class="slide t-paper sl-m6" data-id="perfil-habitos" data-chapter="4" data-title="Quem respondeu e como compra"
+  data-src="Fonte: questionário da pesquisa (13 respostas, 3 a 18/11/2026). Amostra pequena e por conveniência: os números valem para quem respondeu."
+  data-more='[["ap-perfil","Perfil completo"],["ap-rotina","Rotina de compra"],["ap-ofertas","Marcas e ofertas"]]'>
+  <div class="s-body">
+    <div class="m6-head">
+      <div>
+        <p class="kicker red" data-anim style="--d:0">Resultados · questionário</p>
+        <h2 class="t-h2" data-split>Quem respondeu e <span class="it">como compra</span></h2>
+      </div>
+      <button class="m-chip" type="button" data-drawer="drIdade" data-anim style="--d:8">Comparar por idade <span aria-hidden="true">⇄</span></button>
+    </div>
+    <div class="m6-grid">
+      <div class="m6t m6-a" data-anim style="--d:2">
+        <span class="rt-k">Quem respondeu</span>
+        <div>
+          <div class="m6-big"><span class="count" data-to="13">13</span></div>
+          <p class="m6-cap">pessoas responderam.</p>
+          <div class="dots" data-n="12" data-of="13"></div>
+          <p class="m6-sub"><b>12</b> já compraram na loja, <b>10</b> delas várias vezes.</p>
+        </div>
+        <p class="m6-note">Amostra pequena, por conveniência, quase toda de clientes atuais.</p>
+      </div>
+      <div class="m6t" data-anim style="--d:3"><span class="rt-k">Frequência</span><div><div class="rt-n"><span class="count" data-to="8">8</span><small>de 13</small></div><p>compram cosméticos uma vez por mês.</p><p class="m6-extra"><b>11 de 13</b> compram pelo menos uma vez por mês.</p></div></div>
+      <div class="m6t redt" data-anim style="--d:4"><span class="rt-k">Onde preferem comprar</span><div><div class="rt-n"><span class="count" data-to="8">8</span><small>de 13</small></div><p>preferem lojas físicas a sites e aplicativos.</p></div><div class="dots" data-n="8" data-of="13"></div></div>
+      <div class="m6t" data-anim style="--d:5"><span class="rt-k">Categoria e gasto</span><div class="m6-pair"><div><div class="rt-n">7<small>de 13</small></div><p>preferem produtos para cabelo.</p></div><div><div class="rt-n">7<small>de 13</small></div><p>gastam de R$ 50 a R$ 100 por compra.</p></div></div></div>
+      <div class="m6t inkt" data-anim style="--d:6"><span class="rt-k">Ofertas</span><div class="m6-pair"><div><div class="rt-n">12<small>de 13</small></div><p>se interessam por descontos em produtos.</p></div><div><div class="rt-n">9<small>de 13</small></div><p>querem encontrar mais promoções.</p></div></div></div>
+    </div>
+    <aside class="drawer" id="drIdade" aria-label="Comparação por faixa etária" aria-hidden="true">
+      <button class="dr-x" type="button" aria-label="Fechar comparação"><svg><use href="#i-close"/></svg></button>
+      <p class="kicker red">Comparação por faixa etária</p>
+      <h3 class="dr-t">Gerações diferentes, <span class="it">hábitos diferentes</span></h3>
+      <p class="note">São sinais numa amostra pequena, e não conclusões sobre gerações inteiras.</p>
+      <div class="dr-ages">
+        <div class="dra old"><div class="dra-h"><b>35 anos ou mais</b><span>6 pessoas</span></div>
+          <p><b>5/6</b> preferem a loja física</p><p><b>5/6</b> compram principalmente cabelo</p><p><b>4/6</b> gastam R$ 100 ou mais por compra</p></div>
+        <div class="dra young"><div class="dra-h"><b>Menos de 35 anos</b><span>7 pessoas</span></div>
+          <p><b>4/7</b> preferem sites e aplicativos</p><p><b>5/7</b> compram “um pouco de tudo”</p></div>
+      </div>
+      <button class="dr-more" type="button" data-goap="ap-idade">Ver a comparação completa →</button>
+    </aside>
+  </div>
+</section>
+
+<!-- 07 — O QUE INFLUENCIA A COMPRA ================================ -->
+<section class="slide t-paper sl-fatores" data-id="fatores" data-chapter="4" data-title="O que influencia a compra"
+  data-src="Fonte: questionário da pesquisa (13 respondentes). Cada pessoa podia marcar mais de uma opção, por isso os percentuais não somam 100%."
+  data-more='[["ap-relatorio","Gráficos originais"]]'>
+  <div class="s-body">
+    <div class="fat-head">
+      <p class="kicker red" data-anim style="--d:0">Questionário · decisão de compra</p>
+      <h2 class="t-h2" data-split>O que realmente <span class="it">influencia</span> a compra?</h2>
+    </div>
+    <div class="fat-chart" role="list" aria-label="Fatores que mais influenciam a compra, em porcentagem dos 13 respondentes">
+      <button class="fbar top" type="button" role="listitem" data-anim style="--d:3"><span class="fb-l">Preço</span><div class="bar is-red" style="--d:0"><i style="--v:61.5%"></i></div><span class="fb-v"><b><span class="count" data-to="61.5" data-dec="1">61,5</span>%</b><small>8 pessoas</small></span></button>
+      <button class="fbar" type="button" role="listitem" data-anim style="--d:4"><span class="fb-l">Qualidade</span><div class="bar" style="--d:1"><i style="--v:46.2%"></i></div><span class="fb-v"><b><span class="count" data-to="46.2" data-dec="1">46,2</span>%</b><small>6 pessoas</small></span></button>
+      <button class="fbar" type="button" role="listitem" data-anim style="--d:5"><span class="fb-l">Promoções</span><div class="bar" style="--d:2"><i style="--v:30.8%"></i></div><span class="fb-v"><b><span class="count" data-to="30.8" data-dec="1">30,8</span>%</b><small>4 pessoas</small></span></button>
+      <button class="fbar" type="button" role="listitem" data-anim style="--d:6"><span class="fb-l">Marca</span><div class="bar" style="--d:3"><i style="--v:23.1%"></i></div><span class="fb-v"><b><span class="count" data-to="23.1" data-dec="1">23,1</span>%</b><small>3 pessoas</small></span></button>
+      <button class="fbar" type="button" role="listitem" data-anim style="--d:7"><span class="fb-l">Atendimento</span><div class="bar" style="--d:4"><i style="--v:15.4%"></i></div><span class="fb-v"><b><span class="count" data-to="15.4" data-dec="1">15,4</span>%</b><small>2 pessoas</small></span></button>
+      <button class="fbar" type="button" role="listitem" data-anim style="--d:8"><span class="fb-l">Indicação</span><div class="bar" style="--d:5"><i style="--v:7.7%"></i></div><span class="fb-v"><b><span class="count" data-to="7.7" data-dec="1">7,7</span>%</b><small>1 pessoa</small></span></button>
+      <div class="fat-axis" aria-hidden="true" data-anim style="--d:9"><span></span><div><span style="left:0">0%</span><span style="left:25%">25%</span><span style="left:50%">50%</span><span style="left:75%">75%</span><span style="left:100%">100%</span></div><span></span></div>
+    </div>
+    <div class="fat-side">
+      <div class="fs a" data-anim="right" style="--d:9"><div class="fs-n"><span class="count" data-to="10">10</span><small> de 13</small></div><p>marcaram preço <b>ou</b> promoções.</p></div>
+      <div class="fs b" data-anim="right" style="--d:10"><div class="fs-n">2<small> de 13</small></div><p>citaram o atendimento, justamente o diferencial que a loja quer reforçar.</p></div>
+      <button class="evidence" type="button" data-anim style="--d:12" data-full="assets/img/relatorio/p4-grafico-fatores.png" data-caption="Relatório, p. 4 — Gráfico 1: o que mais influencia a compra"><img src="assets/img/relatorio/p4-grafico-fatores.png" alt="Recorte do relatório: Gráfico 1"><span class="ev-tag">Gráfico original · p. 4 <em>ampliar ↗</em></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- 08 — O OLHAR DA ESPECIALISTA =================================== -->
+<section class="slide t-paper2 sl-m8" data-id="especialista" data-chapter="4" data-title="O olhar da especialista"
+  data-src="Fonte: entrevista em profundidade com Glenda Oliveira (Zoom, 17/11/2026), análise do relatório, p. 5–6."
+  data-more='[["ap-entrevista","Análise completa da entrevista"]]'>
+  <div class="s-body">
+    <div class="m8-left">
+      <p class="kicker red" data-anim style="--d:0">Entrevista em profundidade</p>
+      <h2 class="ent-name" data-split><span>Glenda</span> <span>Oliveira</span></h2>
+      <p class="ent-role" data-anim style="--d:4">Personal shopper de cosméticos</p>
+      <div class="ent-meta" data-anim style="--d:5"><span>Zoom · 17/11/2026</span><span>Sem vínculo com a loja</span></div>
+      <p class="note" data-anim style="--d:8">Síntese da conversa, sem citações literais. O foco dela é a venda online e os importados; o que disse sobre confiança vale também para a loja física.</p>
+    </div>
+    <div class="m8-right">
+      <div class="m8-title">
+        <h3 class="t-h2" data-split>O olhar da <span class="it">especialista</span></h3>
+        <button class="m-chip" type="button" data-drawer="drGlenda" data-anim style="--d:9">Outros aprendizados +</button>
+      </div>
+      <div class="m8-cards">
+        <article class="m8c c1" data-anim style="--d:4"><span class="m8-n">01</span><h4>Confiança</h4><p>Preço, exclusividade e confiança pesam juntos. A cliente quer saber se o produto é original e se serve para ela.</p></article>
+        <article class="m8c c2" data-anim style="--d:6"><span class="m8-n">02</span><h4>Experiência</h4><p>Na loja física dá para testar, ser orientada e levar o produto na hora.</p></article>
+        <article class="m8c c3" data-anim style="--d:8"><span class="m8-n">03</span><h4>Fidelização</h4><p>Acompanhar a cliente do início ao fim, com atendimento humano e pós-venda.</p></article>
+      </div>
+    </div>
+    <aside class="drawer" id="drGlenda" aria-label="Outros aprendizados da entrevista" aria-hidden="true">
+      <button class="dr-x" type="button" aria-label="Fechar"><svg><use href="#i-close"/></svg></button>
+      <p class="kicker red">Entrevista · outros aprendizados</p>
+      <h3 class="dr-t">Também apareceu <span class="it">na conversa</span></h3>
+      <div class="dr-list">
+        <div><span>04</span><h4>Kits personalizados mostram valor.</h4><p>Combinações de produtos que compensam para a cliente vendem mais do que só desconto.</p></div>
+        <div><span>05</span><h4>Gente real gera credibilidade.</h4><p>Vídeos mostrando aplicação e resultado, depoimentos e parcerias com microinfluenciadoras.</p></div>
+      </div>
+      <p class="note">Síntese da análise do relatório. Não são falas literais da entrevistada.</p>
+      <button class="dr-more" type="button" data-goap="ap-entrevista">Ver a análise completa →</button>
+    </aside>
+  </div>
+</section>
+
+<!-- 09 — O ESPAÇO DA BELEZA NO INSTAGRAM =========================== -->
+<section class="slide t-ink sl-m9" data-id="instagram" data-chapter="4" data-title="O Espaço da Beleza no Instagram"
+  data-src="Fonte: netnografia do perfil @espacodabelezabsb (publicações de 29/09 a 18/11/2026; 29 comentários em cinco publicações). Vídeo e prints reais; usuários anonimizados."
+  data-more='[["ap-perfil-ig","Perfil, bio e destaques"],["ap-comentarios","Comentários completos"]]'>
+  <div class="s-body">
+    <div class="m9-left">
+      <p class="kicker red" data-anim style="--d:0">Netnografia · Instagram</p>
+      <h2 class="m9-title" data-split>O que acontece do outro lado <span class="it">da tela?</span></h2>
+      <div class="m9-stats" data-anim style="--d:5">
+        <div><b><span class="count" data-to="7260">7.260</span></b><span>seguidores</span></div>
+        <div><b><span class="count" data-to="212">212</span></b><span>publicações</span></div>
+      </div>
+      <p class="m9-when" data-anim style="--d:6">@espacodabelezabsb · números no momento da pesquisa</p>
+      <div class="m9-chart" data-anim style="--d:7" aria-label="Tipos de comentário: humor 9, elogio 6, vontade de comprar 6, emojis 4, perguntas 3, recomendação 1">
+        <p class="m9-ck"><b>29 comentários</b> em cinco publicações</p>
+        <div class="stack" aria-hidden="true"><i style="--n:9; --c:var(--paper)"></i><i style="--n:6; --c:#8E857E"></i><i style="--n:6; --c:var(--red-light)"></i><i style="--n:4; --c:#5A524D"></i><i style="--n:3; --c:#D46C88"></i><i style="--n:1; --c:var(--red)"></i></div>
+        <ul class="m9-leg">
+          <li><i style="--c:var(--paper)"></i>Humor e reação ao vídeo<b>9</b></li>
+          <li><i style="--c:#8E857E"></i>Elogio a quem aparece<b>6</b></li>
+          <li class="hl"><i style="--c:var(--red-light)"></i>Vontade de comprar ou visitar<b>6</b></li>
+          <li><i style="--c:#5A524D"></i>Emojis de apoio<b>4</b></li>
+          <li><i style="--c:#D46C88"></i>Pergunta sobre produto<b>3</b></li>
+          <li><i style="--c:var(--red)"></i>Recomendação do atendimento<b>1</b></li>
+        </ul>
+      </div>
+    </div>
+    <div class="player m9-player" data-player data-captions="promocoes" data-anim style="--d:3">
+      <div class="phone"><div class="screen">
+        <video src="assets/video/promocoes.mp4" poster="assets/video/promocoes-capa.jpg" playsinline preload="metadata" aria-label="Vídeo do perfil sobre o cartão fidelidade da loja"></video>
+        <div class="pcap" aria-live="off"></div>
+        <button class="pbig" type="button" aria-label="Reproduzir vídeo com som"><span><svg><use href="#i-play"/></svg></span></button>
+      </div></div>
+      <p class="m9-vcap">Vídeo real do perfil, gravado na porta da loja</p>
+    </div>
+    <div class="m9-right">
+      <div class="m9-posts" data-anim style="--d:5">
+        <img src="assets/img/instagram/reel-limpando.jpg" alt="Reel do perfil: 'Estava limpando os produtos e pensando…'">
+        <img src="assets/img/instagram/reel-black-friday.jpg" alt="Reel do perfil: 'A nossa Black Friday já está on'">
+        <img src="assets/img/instagram/reel-pensamentos.jpg" alt="Reel do perfil: 'Meus pensamentos o tempo todo'">
+      </div>
+      <p class="m9-pcap" data-anim style="--d:6">Reels gravados na loja (print de 25/11/2026)</p>
+      <div class="bub" data-anim="scale" style="--d:8"><div class="bu"><i></i>usuária · humor</div><p>“Eu quero conhecer essas tias! Kkkk”</p></div>
+      <div class="bub buy" data-anim="scale" style="--d:10"><div class="bu"><i></i>usuária · vontade de comprar</div><p>“Preciso de um kit Loreal, pq o meu acabou. Vou passar com vocês sim.”</p></div>
+      <div class="m9-ins" data-anim style="--d:12">
+        <p><b>Humor</b> gera conversa. <b>Produto e preço</b> geram “eu quero”.</p>
+        <small>Vontade de comprar não é venda: a pesquisa não mediu compras.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 — AVALIAÇÕES DO GOOGLE ===================================== -->
+<section class="slide t-ink sl-google" data-id="google" data-chapter="4" data-title="O que dizem as avaliações do Google"
+  data-src="Fonte: netnografia das 22 avaliações da loja no Google (dados da própria pesquisa). Nomes dos avaliadores não aparecem.">
+  <div class="s-body">
+    <div class="gg-head">
+      <p class="kicker red" data-anim style="--d:0">Netnografia · Google</p>
+      <h2 class="t-h2" data-split>O que dizem as <span class="it">avaliações?</span></h2>
+    </div>
+    <div class="gg-score">
+      <div class="gs-n" data-anim style="--d:2"><span class="count" data-to="4.6" data-dec="1">4,6</span></div>
+      <div class="stars" data-anim style="--d:3" aria-label="Nota 4,6 de 5"><span class="s-bg">★★★★★</span><span class="s-fg" style="--v:92%">★★★★★</span></div>
+      <p data-anim style="--d:4">de nota média, em 22 avaliações.</p>
+    </div>
+    <div class="gg-cards">
+      <div class="gc redg" data-anim style="--d:5"><div class="gc-n"><span class="count" data-to="17">17</span><small> de 22</small></div><p>avaliações com cinco estrelas.</p></div>
+      <div class="gc" data-anim style="--d:6"><div class="gc-n"><span class="count" data-to="8">8</span><small> de 9</small></div><p>avaliações com texto elogiam o atendimento ou os profissionais.</p></div>
+      <div class="gc quote" data-anim style="--d:7"><span class="q">bom atendimento e preço justo</span><p>3 avaliações juntam atendimento e preço na mesma frase.</p></div>
+      <div class="gc old" data-anim style="--d:8">
+        <div class="old-row">
+          <div class="gc-n"><span class="count" data-to="20">20</span><small> de 22</small></div>
+          <div>
+            <div class="cells" data-old="20" data-of="22" aria-hidden="true"></div>
+            <p>foram feitas há três anos ou mais. A reputação é boa, mas antiga.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="note gg-note" data-anim style="--d:10">Não incluímos prints das avaliações para preservar quem avaliou.</p>
+  </div>
+</section>
+
+<!-- 11 — O GRANDE INSIGHT ========================================== -->
+<section class="slide t-paper sl-comparacao sl-m11" data-id="insight" data-chapter="5" data-title="O grande insight"
+  data-src="Fonte: questionário (13 pessoas) e avaliações do Google com texto (9), dados da própria pesquisa. Cada barra mostra a parte de quem citou o tema.">
+  <div class="s-body">
+    <div class="cmp-head">
+      <p class="kicker red" data-anim style="--d:0">Juntando as três frentes</p>
+      <h2 class="t-h2" data-split>O que dizem <span class="it">×</span> o que elogiam</h2>
+    </div>
+    <button class="evidence" type="button" data-anim style="--d:6" data-full="assets/img/relatorio/p7-grafico-comparacao.png" data-caption="Relatório, p. 7 — Gráfico 3: o que as clientes dizem x o que elogiam"><img src="assets/img/relatorio/p7-grafico-comparacao.png" alt="Recorte do relatório: Gráfico 3"><span class="ev-tag">Gráfico original · p. 7 <em>ampliar ↗</em></span></button>
+    <div class="cmp-blocks">
+      <article class="cmp ask" data-anim style="--d:2">
+        <span class="c-k">Quando perguntamos · questionário</span>
+        <h3>Elas falam de <span class="it">preço.</span></h3>
+        <div class="c-row"><span class="c-l">Preço ou promoções</span><div class="bar is-red" style="--d:0"><i style="--v:77%"></i></div><span class="c-v"><span class="count" data-to="77">77</span>%</span></div>
+        <div class="c-row"><span class="c-l">Atendimento</span><div class="bar" style="--d:1"><i style="--v:15%"></i></div><span class="c-v"><span class="count" data-to="15">15</span>%</span></div>
+        <p class="c-base">Base: 13 pessoas que responderam ao questionário.</p>
+      </article>
+      <article class="cmp spont" data-anim style="--d:5">
+        <span class="c-k">Quando falam espontaneamente · Google</span>
+        <h3>Elas elogiam o <span class="it">atendimento.</span></h3>
+        <div class="c-row"><span class="c-l">Atendimento</span><div class="bar is-red" style="--d:3"><i style="--v:89%"></i></div><span class="c-v"><span class="count" data-to="89">89</span>%</span></div>
+        <div class="c-row"><span class="c-l">Preço</span><div class="bar" style="--d:4"><i style="--v:33%"></i></div><span class="c-v"><span class="count" data-to="33">33</span>%</span></div>
+        <p class="c-base">Base: 9 avaliações do Google com texto.</p>
+      </article>
+    </div>
+    <p class="note cmp-note" data-anim style="--d:8">Bases diferentes: não é uma comparação estatística entre as mesmas pessoas, e sim um contraste entre o que aparece quando perguntamos e o que aparece de forma espontânea. <b class="m11-hint">Clique para a conclusão →</b></p>
+  </div>
+  <div class="m11-phrase" data-step="1">
+    <svg class="fr-flower" aria-hidden="true"><use href="#i-flower"/></svg>
+    <div class="m11-in">
+      <p class="kicker fr-k pa" style="--d:0">A principal interpretação da pesquisa</p>
+      <h2 class="fr-1" data-split style="--sd:200ms">O preço atrai.</h2>
+      <h2 class="fr-2" data-split style="--sd:650ms">A <span class="it">confiança</span> faz voltar.</h2>
+      <p class="fr-note pa" style="--d:14">Uma leitura construída a partir das três frentes da pesquisa. Não é uma relação de causa comprovada.</p>
+      <div class="fr-tri pa" style="--d:16"><span>Questionário</span><span>Entrevista</span><span>Netnografia</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 — E AS NOSSAS HIPÓTESES? =================================== -->
+<section class="slide t-ink sl-hip-res res" data-id="hipoteses-resultado" data-chapter="5" data-title="E as nossas hipóteses?">
+  <div class="s-body">
+    <div class="hip-head">
+      <div>
+        <p class="kicker red" data-anim style="--d:0">De volta ao começo</p>
+        <h2 class="t-h1" data-split>E as nossas <span class="it">hipóteses?</span></h2>
+      </div>
+      <p class="t-body" data-anim style="--d:4">Nem tudo se confirma, e tudo bem: a pesquisa também mostra o que ainda precisa ser medido.</p>
+    </div>
+    <div class="hip-cards">
+      <article class="hcard h1c" data-anim style="--d:4"><span class="h-num">H1</span><h3>Preço</h3><p class="orig">O preço é o fator que mais pesa na decisão de compra.</p>
+        <div class="verdict v-ok" data-anim style="--d:12"><span class="v-stamp">✓ Confirmada</span><span class="v-txt">entre os respondentes do questionário.</span></div></article>
+      <article class="hcard" data-anim style="--d:5"><span class="h-num">H2</span><h3>Atendimento</h3><p class="orig">O atendimento e a orientação são um diferencial da loja física.</p>
+        <div class="verdict v-open" data-anim style="--d:18"><span class="v-stamp">◐ Em aberto</span><span class="v-txt">Fortalecida pelas avaliações e pela entrevista, mas o questionário não mediu a satisfação com o atendimento.</span></div></article>
+      <article class="hcard" data-anim style="--d:6"><span class="h-num">H3</span><h3>Instagram</h3><p class="orig">O Instagram aproxima as clientes e estimula a visita à loja.</p>
+        <div class="verdict v-sign" data-anim style="--d:24"><span class="v-stamp">↗ Sinais positivos</span><span class="v-txt">Há comentários de vontade de comprar, mas não medimos se o Instagram leva à compra.</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 13 — DA PESQUISA À PRÁTICA ===================================== -->
+<section class="slide t-paper sl-m13" data-id="recomendacoes" data-chapter="6" data-title="Da pesquisa à prática"
+  data-src="Recomendações do relatório (3.5), organizadas em três pilares. Os mockups são propostas ilustrativas, não ações já feitas pela loja."
+  data-more='[["ap-recs","Recomendações completas"]]'>
+  <div class="s-body">
+    <div class="m13-head">
+      <div>
+        <p class="kicker red" data-anim style="--d:0">Recomendações</p>
+        <h2 class="t-h2" data-split>Da pesquisa <span class="it">à prática</span></h2>
+      </div>
+      <p class="m13-lead" data-anim style="--d:4">Cinco ações em três pilares.<br><b>Clique em cada uma para ver a proposta.</b></p>
+    </div>
+    <div class="m13-cols">
+      <div class="pil p1" data-anim style="--d:3">
+        <div class="pil-h"><span class="pil-k">Pilar 1</span><h3>Atrair</h3><p>O que traz a cliente até a loja.</p></div>
+        <button class="rc tall" type="button" data-rec='[data-id="ap-rec-1"] .rd.l' data-rec-k="Atrair · 01">
+          <span class="rc-n">01</span>
+          <span class="rc-t">Kits por necessidade e promoções</span>
+          <span class="rc-d">Ressecamento, transição capilar e coloração, com preço até R$ 200 e a economia em relação aos avulsos à vista.</span>
+          <span class="rc-vis kits-mini" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="rc-go">Ver proposta →</span>
+        </button>
+      </div>
+      <div class="pil p2" data-anim style="--d:5">
+        <div class="pil-h"><span class="pil-k">Pilar 2</span><h3>Construir <span class="it">confiança</span></h3><p>O que ajuda a cliente a escolher.</p></div>
+        <button class="rc" type="button" data-rec='[data-id="ap-rec-1"] .rd.d' data-rec-k="Construir confiança · 02">
+          <span class="rc-n">02</span>
+          <span class="rc-t">Conteúdos com orientações da equipe</span>
+          <span class="rc-d">Vídeos curtos: o problema, o produto, como usar e o preço.</span>
+          <span class="rc-vis reels-mini" aria-hidden="true"><img src="assets/img/loja/prateleira-rosa.jpg" alt=""><img src="assets/img/loja/prateleira-cabelo.jpg" alt=""><img src="assets/img/loja/escovas.jpg" alt=""><img src="assets/img/loja/maquiagem.jpg" alt=""></span>
+          <span class="rc-go">Ver proposta →</span>
+        </button>
+        <button class="rc" type="button" data-rec='[data-id="ap-rec-3"] .bio-cols' data-rec-k="Construir confiança · 05">
+          <span class="rc-n">05</span>
+          <span class="rc-t">Instagram mais funcional</span>
+          <span class="rc-d">Bio que diz por que escolher a loja, WhatsApp direto, destaques de ofertas, marcas e depoimentos.</span>
+          <span class="rc-vis bio-mini" aria-hidden="true"><img src="assets/img/marca/logo-espaco-da-beleza.jpg" alt=""><i></i><i></i><i></i><i></i></span>
+          <span class="rc-go">Ver proposta →</span>
+        </button>
+      </div>
+      <div class="pil p3" data-anim style="--d:7">
+        <div class="pil-h"><span class="pil-k">Pilar 3</span><h3>Fazer <span class="it">voltar</span></h3><p>O que traz a cliente de novo.</p></div>
+        <button class="rc" type="button" data-rec='[data-id="ap-rec-2"] .rd.l' data-rec-k="Fazer voltar · 03">
+          <span class="rc-n">03</span>
+          <span class="rc-t">WhatsApp com autorização das clientes</span>
+          <span class="rc-d">Lista de transmissão por unidade para promoções e lembrete de reposição.</span>
+          <span class="rc-vis wa-mini" aria-hidden="true"><span>Oi, [nome]! Quer que a gente separe a reposição?</span></span>
+          <span class="rc-go">Ver proposta →</span>
+        </button>
+        <button class="rc" type="button" data-rec='[data-id="ap-rec-2"] .rd.d' data-rec-k="Fazer voltar · 04">
+          <span class="rc-n">04</span>
+          <span class="rc-t">Incentivo a avaliações no Google</span>
+          <span class="rc-d">QR code no caixa e resposta a cada avaliação.</span>
+          <span class="rc-vis qr-mini" aria-hidden="true"><svg class="qr-illu" viewBox="0 0 29 29"></svg><b>★★★★★</b></span>
+          <span class="rc-go">Ver proposta →</span>
+        </button>
+      </div>
+    </div>
+    <aside class="drawer wide" id="drRec" aria-label="Detalhes da proposta" aria-hidden="true">
+      <button class="dr-x" type="button" aria-label="Fechar proposta"><svg><use href="#i-close"/></svg></button>
+      <p class="kicker red dr-k"></p>
+      <div class="dr-body"></div>
+    </aside>
+  </div>
+</section>
+
+<!-- 14 — LIMITAÇÕES, PRÓXIMOS PASSOS E ENCERRAMENTO ================ -->
+<section class="slide t-ink sl-fim sl-m14" data-id="encerramento" data-chapter="6" data-title="Limitações e encerramento"
+  data-src="Fonte: relatório da pesquisa, 3.6 Limitações."
+  data-more='[["ap-limitacoes","Limitações em detalhe"],["ap-referencias","Referências"]]'>
+  <div class="s-body">
+    <div class="fim-left">
+      <div class="m14-lim" data-anim style="--d:0">
+        <p class="kicker red">Limitações e próximo passo</p>
+        <ul class="m14-chips"><li>Apenas 13 respostas</li><li>Amostra por conveniência</li><li>Maioria de clientes atuais</li><li>2 respostas quase idênticas</li><li>Uma única entrevista</li><li>Poucas publicações observadas</li></ul>
+        <p class="m14-next"><span>Próximo passo</span>Entrevistar diretamente as clientes da loja.</p>
+      </div>
+      <h2 class="fim-quote" data-split style="--sd:350ms">Mais do que vender cosméticos, o Espaço da Beleza pode construir <span class="it">motivos para voltar.</span></h2>
+      <p class="fim-thanks" data-anim style="--d:14">Obrigada!</p>
+      <div class="fim-meta" data-anim style="--d:16">
+        <p><b>Espaço da Beleza — Pesquisa de Mercado</b><br>IDP · Profa. Carolina Sampaio<br>Agatha Yasmin · Alice Rodrigues · Laila Gebrim · Valentina Abib</p>
+        <div class="fim-btns">
+          <button class="fim-btn" type="button" data-open="refs"><svg><use href="#i-book"/></svg>Referências</button>
+          <a class="fim-btn" href="assets/docs/relatorio-pesquisa-espaco-da-beleza.pdf" target="_blank" rel="noopener"><svg><use href="#i-doc"/></svg>Relatório</a>
+          <button class="fim-btn" type="button" data-goap="ap-objetivos"><svg><use href="#i-menu"/></svg>Dados e evidências</button>
+          <button class="fim-btn" type="button" data-action="restart"><svg><use href="#i-restart"/></svg>Reiniciar</button>
+        </div>
+      </div>
+    </div>
+    <figure class="fim-video reveal amb" style="--d:3">
+      <video class="ambient" src="assets/video/espaco.mp4" poster="assets/img/loja/vista-geral.jpg" muted loop playsinline preload="metadata" aria-label="Vídeo sem som mostrando o interior da loja"></video>
+      <button class="amb-toggle" type="button" aria-label="Pausar ou retomar o vídeo de fundo"><svg class="ic-pause"><use href="#i-pause"/></svg><svg class="ic-play"><use href="#i-play"/></svg></button>
+    </figure>
+  </div>
+</section>
+
+<!-- ======================================================================
+     DADOS E EVIDÊNCIAS DA PESQUISA (fora da sequência principal)
+     ====================================================================== -->
+
+<section data-ap class="slide t-paper sl-objetivos" data-id="ap-objetivos" data-title="Objetivos completos">
+  <div class="s-body">
+    <div class="obj-left">
+      <p class="kicker red" data-anim style="--d:0">Problema de pesquisa</p>
+      <h2 class="t-h1" data-split>O que queríamos <span class="it">descobrir?</span></h2>
+      <p class="obj-prob" data-anim style="--d:5">Quais fatores levam as consumidoras a <b>escolher</b> o Espaço da Beleza e a <b>voltar</b> a comprar lá, e como o <b>Instagram</b> e as <b>avaliações online</b> participam dessa decisão.</p>
+      <p class="obj-geral" data-anim style="--d:7"><b>Objetivo geral:</b> compreender o que influencia a decisão de compra e a fidelização das clientes, na loja física e nos canais digitais.</p>
+    </div>
+    <div class="obj-grid">
+      <article class="ob o1" data-anim style="--d:4"><span class="n">01</span><div><h3>Conhecer o perfil das clientes.</h3><p>Frequência, categorias, gasto e canal preferido.</p></div></article>
+      <article class="ob o2" data-anim style="--d:5"><span class="n">02</span><div><h3>Entender o que influencia a compra.</h3></div></article>
+      <article class="ob o3" data-anim style="--d:6"><span class="n">03</span><span class="arrow" aria-hidden="true">↘</span><div><h3>Descobrir o que gera confiança e fidelização.</h3></div></article>
+      <article class="ob o4" data-anim style="--d:7"><span class="n">04</span><div><h3>Analisar a presença digital da marca.</h3></div></article>
+      <article class="ob o5" data-anim style="--d:8"><span class="n">05</span><div><h3>Propor ações para trazer as clientes de volta.</h3></div></article>
+    </div>
+  </div>
+</section>
+
+<section data-ap class="slide t-ink sl-mercado" data-id="ap-setor" data-title="Dados secundários: o setor"
+  data-src="Fontes: Euromonitor, via ABIHPEC (posição no mercado, vendas, cabelo e masculinos) · g1, via ABIHPEC (novos estabelecimentos).">
+  <div class="s-body">
+    <div class="mkt-grid">
+      <div class="mkt-head-cell" style="grid-column:1; grid-row:1">
+        <p class="kicker red" data-anim style="--d:0">Dados secundários · setor</p>
+        <h2 class="t-h2" data-split>O mercado da beleza <span class="it">em números</span></h2>
+      </div>
+      <div class="mt mt-a" data-anim style="--d:3"><span class="mt-k">Mercado mundial</span><span class="big"><span class="count" data-to="3">3</span><sup>º</sup></span><p>é a posição do Brasil no mercado mundial de beleza e cuidados pessoais.</p></div>
+      <div class="mt mt-b" data-anim style="--d:4"><span class="mt-k">Vendas em 2024</span><span class="big"><small>US$</small> <span class="count" data-to="37.4" data-dec="1">37,4</span><br><small>bilhões</small></span><p>em vendas de beleza e cuidados pessoais no Brasil.</p></div>
+      <div class="mt mt-c" data-anim style="--d:5"><span class="mt-k">Cabelo · 2025</span><span class="big">+<span class="count" data-to="9">9</span>%</span><p>foi o crescimento de cuidados com o cabelo, categoria em que o Brasil também é o 3º do mundo.</p></div>
+      <div class="mt mt-d" data-anim style="--d:6"><span class="mt-k">2025</span><span class="big"><span class="count" data-to="235">235</span> mil+</span><p>novos estabelecimentos de beleza abertos.</p></div>
+      <div class="mt mt-e" data-anim style="--d:7"><span class="mt-k">Masculinos · 2025</span><span class="big"><span class="count" data-to="2">2</span>º</span><p>lugar mundial em produtos masculinos.</p></div>
+    </div>
+    <button class="evidence" type="button" data-anim style="--d:9" data-full="assets/img/relatorio/p2-dados-secundarios.png" data-caption="Relatório, p. 2 — 1.4 Dados secundários"><img src="assets/img/relatorio/p2-dados-secundarios.png" alt="Recorte do relatório: tabela de dados secundários"><span class="ev-tag">Relatório · p. 2 <em>ampliar ↗</em></span></button>
+  </div>
+</section>
+
+<section data-ap class="slide t-paper sl-regioes" data-id="ap-regioes" data-title="Dados secundários: as regiões"
+  data-src="Fonte: IPEDF Codeplan — Pesquisa Distrital por Amostra de Domicílios Ampliada (PDAD-A 2024): Guará e Águas Claras.">
+  <div class="s-body">
+    <div class="reg-head">
+      <p class="kicker red" data-anim style="--d:0">Dados secundários · regiões das lojas</p>
+      <h2 class="t-h1" data-split>Comprar <span class="it">perto de casa</span></h2>
+      <p class="t-lead" data-anim style="--d:5">Nas regiões onde a loja está, as compras do dia a dia ficam no próprio bairro.</p>
+    </div>
+    <p class="reg-note" data-anim="right" style="--d:6"><b>Atenção:</b> o dado fala de compras de <b>alimentação, higiene e limpeza</b> na própria região, e não especificamente de cosméticos. Ele mostra um hábito de comprar perto de casa.</p>
+    <div class="reg-bars">
+      <div class="rbar" data-anim style="--d:7">
+        <div class="rb-left"><span class="kicker plain">Moradores que compram no</span><span class="rb-name">Guará</span></div>
+        <div class="rb-row"><div class="bar is-red" style="--d:1"><i style="--v:80.6%"></i></div><span class="rb-val"><span class="count" data-to="80.6" data-dec="1">80,6</span><small>%</small></span></div>
+        <p class="rb-ctx">127.952 moradores · 54,4% mulheres · idade média de 38,1 anos</p>
+      </div>
+      <div class="rbar" data-anim style="--d:9">
+        <div class="rb-left"><span class="kicker plain">Moradores que compram em</span><span class="rb-name">Águas Claras</span></div>
+        <div class="rb-row"><div class="bar" style="--d:3"><i style="--v:81.6%"></i></div><span class="rb-val"><span class="count" data-to="81.6" data-dec="1">81,6</span><small>%</small></span></div>
+        <p class="rb-ctx">141.872 moradores · 53,3% mulheres · idade média de 35,9 anos</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-ap class="slide t-paper2 sl-metodos" data-id="ap-metodos" data-title="Metodologia detalhada">
+  <div class="s-body">
+    <div class="met-head">
+      <p class="kicker red" data-anim style="--d:0">Como fizemos a pesquisa</p>
+      <h2 class="t-h2" data-split>Três maneiras de entender <span class="it">o mesmo comportamento.</span></h2>
+    </div>
+    <button class="evidence" type="button" data-anim style="--d:10" data-full="assets/img/relatorio/p3-instrumentos.png" data-caption="Relatório, p. 2–3 — 2.1 Instrumentos utilizados"><img src="assets/img/relatorio/p3-instrumentos.png" alt="Recorte do relatório: tabela de instrumentos"><span class="ev-tag">Relatório · p. 3 <em>ampliar ↗</em></span></button>
+    <div class="met-cols">
+      <article class="mcol" data-anim style="--d:4">
+        <span class="m-n">01</span><span class="m-type q">Quantitativa</span>
+        <h3>Questionário</h3>
+        <ul><li>13 respostas</li><li>14 perguntas (12 fechadas e 2 abertas), no Google Forms</li><li>Coleta de 3 a 18 de novembro de 2026</li><li>Divulgado pelo WhatsApp</li></ul>
+      </article>
+      <article class="mcol" data-anim style="--d:6">
+        <span class="m-n">02</span><span class="m-type">Qualitativa</span>
+        <h3>Entrevista em profundidade</h3>
+        <ul><li>Glenda Oliveira, personal shopper de cosméticos</li><li>Pelo Zoom, em 17/11/2026</li><li>Roteiro aberto, com muitos “por quê?”</li></ul>
+      </article>
+      <article class="mcol" data-anim style="--d:8">
+        <span class="m-n">03</span><span class="m-type">Qualitativa</span>
+        <h3>Netnografia</h3>
+        <ul><li>Perfil do Instagram, 5 publicações e 29 comentários</li><li>22 avaliações do Google</li></ul>
+        <p class="m-def"><b>Netnografia</b> é observar o que as pessoas dizem e fazem na internet, sem interagir.</p>
+      </article>
+    </div>
+    <div class="met-flow" aria-hidden="true">
+      <svg viewBox="0 0 1728 110" preserveAspectRatio="none"><path d="M288 0 C288 70 864 40 864 100"/><path d="M864 0 L864 100"/><path d="M1440 0 C1440 70 864 40 864 100"/></svg>
+    </div>
+    <span class="met-node" data-anim style="--d:14">Números + motivos + <span class="it">o que se diz online</span></span>
+  </div>
+</section>
+
+<!-- ANEXO — INSTRUMENTOS DE PESQUISA ================================ -->
+<section class="slide t-paper sl-inst" data-id="ap-instrumentos" data-ap data-title="Instrumentos de pesquisa"
+  data-src="Fontes: relatório (2.1 Instrumentos utilizados e Anexo A, roteiro da entrevista) e arquivo de respostas do formulário (perguntas).">
+  <div class="s-body">
+    <div class="inst-head">
+      <p class="kicker red" data-anim style="--d:0">Instrumentos de pesquisa</p>
+      <h2 class="t-h2" data-split>Um instrumento <span class="it">para cada método</span></h2>
+    </div>
+    <div class="inst-cols">
+      <div class="inst" data-anim style="--d:2">
+        <p class="ik">Questionário · Google Forms · 14 perguntas (12 fechadas, 2 abertas)</p>
+        <ol class="inst-q">
+          <li>Qual é a sua faixa etária?</li>
+          <li>Em qual região você mora?</li>
+          <li>Com que frequência você costuma comprar produtos de beleza e cosméticos?</li>
+          <li>O que você mais gosta de comprar?</li>
+          <li>Quanto costuma gastar por compra?</li>
+          <li>Onde você prefere comprar?</li>
+          <li>Se você respondeu “depende do produto”, nos conte quais são os produtos e onde você compra. <em>(aberta)</em></li>
+          <li>O que mais influencia sua compra?</li>
+          <li>O que mais valoriza em uma loja de beleza?</li>
+          <li>Quais marcas você mais gosta de comprar?</li>
+          <li>Que tipo de oferta mais chama sua atenção?</li>
+          <li>Você já comprou no Espaço da Beleza?</li>
+          <li>O que você gostaria de encontrar mais no Espaço da Beleza?</li>
+          <li>Tem alguma sugestão para nós? <em>(aberta)</em></li>
+        </ol>
+      </div>
+      <div class="inst" data-anim style="--d:4">
+        <p class="ik">Entrevista em profundidade · roteiro</p>
+        <ol class="inst-e">
+          <li><b>Aquecimento.</b> Me conta da última vez que você acompanhou uma cliente numa compra de beleza em loja física. Como foi, do começo ao fim?</li>
+          <li><b>Tema central.</b> Me conta de uma loja a que as suas clientes sempre voltam. O que acontece lá que faz elas voltarem?</li>
+          <li><b>Tema central.</b> Me conta de uma vez em que uma cliente deixou de voltar a uma loja ou passou a comprar só pela internet. O que aconteceu?</li>
+          <li><b>Aprofundamento.</b> Você falou em [atributo citado]. Por que isso é importante para a cliente?</li>
+          <li><b>Completar a frase.</b> Uma cliente troca a internet pela loja física quando...</li>
+          <li><b>Fechamento.</b> Tem algo que eu não perguntei e que você acha importante?</li>
+        </ol>
+      </div>
+      <div class="inst" data-anim style="--d:6">
+        <p class="ik">Netnografia · roteiro de observação</p>
+        <ul class="inst-n">
+          <li>Perfil <b>@espacodabelezabsb</b>: bio, destaques, publicações e comentários</li>
+          <li>Publicações de 29/09 a 18/11/2026: cinco publicações e seus comentários</li>
+          <li>As 22 avaliações da loja no Google</li>
+          <li>Só observação, sem interagir; nomes de usuários não aparecem</li>
+        </ul>
+        <button class="evidence inst-ev" type="button" data-full="assets/img/relatorio/p3-instrumentos.png" data-caption="Relatório, p. 2–3 — 2.1 Instrumentos utilizados"><img src="assets/img/relatorio/p3-instrumentos.png" alt="Recorte do relatório: tabela de instrumentos"><span class="ev-tag">Relatório · p. 3 <em>ampliar ↗</em></span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-ap class="slide t-paper sl-coleta" data-id="ap-coleta" data-title="Coleta e amostragem"
+  data-src="Fonte: relatório da pesquisa (2.2 e 2.3) e respostas do formulário (datas de envio).">
+  <div class="s-body">
+    <div class="col-head">
+      <p class="kicker red" data-anim style="--d:0">Coleta e amostragem</p>
+      <h2 class="t-h2" data-split>Como chegamos <span class="it">até as pessoas</span></h2>
+    </div>
+    <div class="col-whats">
+      <p class="kicker plain" data-anim style="--d:3; margin:0">Questionário divulgado pelo WhatsApp</p>
+      <div class="cw" data-anim style="--d:4"><span class="cw-n">1</span><p>Contatos das integrantes do grupo</p></div>
+      <div class="cw" data-anim style="--d:5"><span class="cw-n">2</span><p>WhatsApp da própria loja</p></div>
+      <div class="cw" data-anim style="--d:6"><span class="cw-n">3</span><p>Gerente da loja<small>compartilhou o link num grupo de clientes</small></p></div>
+    </div>
+    <div class="col-tl" data-anim style="--d:5" aria-label="Linha do tempo da coleta">
+      <span class="tl-legend"><i></i> = 1 resposta do questionário</span>
+      <span class="tl-band net" style="top:52px; width:94.44%">← Netnografia: publicações de 29/09 a 18/11</span>
+      <div class="tl-mark" style="left:88.89%; bottom:120px; height:180px"><span style="left:auto; right:12px">Entrevista · 17/11</span></div>
+      <div class="tl-axis" style="bottom:120px"></div>
+      <span class="tl-dot" style="left:11.11%; bottom:126px; --k:0"></span>
+      <span class="tl-dot" style="left:16.67%; bottom:126px; --k:1"></span><span class="tl-dot" style="left:16.67%; bottom:160px; --k:2"></span><span class="tl-dot" style="left:16.67%; bottom:194px; --k:3"></span><span class="tl-dot" style="left:16.67%; bottom:228px; --k:4"></span>
+      <span class="tl-dot" style="left:22.22%; bottom:126px; --k:5"></span><span class="tl-dot" style="left:22.22%; bottom:160px; --k:6"></span><span class="tl-dot" style="left:22.22%; bottom:194px; --k:7"></span><span class="tl-dot" style="left:22.22%; bottom:228px; --k:8"></span>
+      <span class="tl-dot" style="left:50%; bottom:126px; --k:9"></span><span class="tl-dot" style="left:50%; bottom:160px; --k:10"></span><span class="tl-dot" style="left:50%; bottom:194px; --k:11"></span>
+      <span class="tl-dot" style="left:94.44%; bottom:126px; --k:12"></span>
+      <span class="tl-tick" style="left:0%; bottom:82px">1/11</span>
+      <span class="tl-tick" style="left:11.11%; bottom:82px">3/11</span>
+      <span class="tl-tick" style="left:22.22%; bottom:82px">5/11</span>
+      <span class="tl-tick" style="left:50%; bottom:82px">10/11</span>
+      <span class="tl-tick" style="left:94.44%; bottom:82px">18/11</span>
+      <span class="tl-band form" style="left:11.11%; width:83.33%; bottom:14px; justify-content:center">Questionário aberto · 3 a 18 de novembro</span>
+    </div>
+    <p class="col-target" data-anim style="--d:8"><b>Público-alvo:</b> consumidoras e consumidores de cosméticos, maiores de 18 anos, que compram ou podem comprar no Espaço da Beleza. As respostas chegaram em blocos, nos dias em que o link foi enviado.</p>
+    <div class="col-amo">
+      <div class="amo main" data-anim style="--d:9"><p class="kicker plain">Questionário</p><h4>Por conveniência</h4><p>Não probabilística: respondeu quem estava ao nosso alcance, sem sorteio.</p></div>
+      <div class="amo" data-anim style="--d:10"><p class="kicker plain">Entrevista</p><h4>Intencional</h4><p>Especialista escolhida pela experiência com consumidoras.</p></div>
+      <div class="amo" data-anim style="--d:11"><p class="kicker plain">Netnografia</p><h4>Intencional</h4><p>Publicações recentes com comentários e todas as avaliações do Google.</p></div>
+    </div>
+  </div>
+</section>
+
+<section data-ap class="slide t-ink sl-perfil" data-id="ap-perfil" data-title="Questionário: quem respondeu"
+  data-src="Fonte: questionário da pesquisa (13 respostas, 3 a 18/11/2026).">
+  <div class="s-body">
+    <div class="per-left">
+      <p class="kicker red" data-anim style="--d:0">Questionário · quem respondeu</p>
+      <div class="per-big" data-anim style="--d:1"><span class="count" data-to="13">13</span></div>
+      <p class="per-big-cap" data-anim style="--d:3">pessoas responderam ao questionário.</p>
+      <p class="note" data-anim style="--d:8">Amostra pequena, por conveniência e formada principalmente por clientes atuais. Os números valem para quem respondeu.</p>
+    </div>
+    <div class="per-right">
+      <div class="people" id="people" aria-hidden="true"></div>
+      <div class="stat-btns" role="group" aria-label="Destacar grupos de respondentes">
+        <button class="stat-btn" type="button" data-set="comprou" aria-pressed="true" data-anim style="--d:5"><b>12</b><span>já compraram no Espaço da Beleza</span></button>
+        <button class="stat-btn" type="button" data-set="varias" aria-pressed="false" data-anim style="--d:6"><b>10</b><span>já compraram várias vezes</span></button>
+        <button class="stat-btn" type="button" data-set="guara" aria-pressed="false" data-anim style="--d:7"><b>6</b><span>moram no Guará</span></button>
+        <button class="stat-btn" type="button" data-set="jovem" aria-pressed="false" data-anim style="--d:8"><b>5</b><span>têm de 18 a 24 anos</span></button>
+        <button class="stat-btn" type="button" data-set="mais35" aria-pressed="false" data-anim style="--d:9"><b>6</b><span>têm 35 anos ou mais</span></button>
+        <button class="stat-btn" type="button" data-set="regiao" aria-pressed="false" data-anim style="--d:10"><b>9</b><span>moram onde a loja tem unidade</span></button>
+      </div>
+      <p class="t-small" data-anim style="--d:11">Clique em cada número para ver quem é quem entre as 13 pessoas.</p>
+    </div>
+  </div>
+</section>
+
+<section data-ap class="slide t-paper sl-rotina" data-id="ap-rotina" data-title="Questionário: rotina de compra"
+  data-src="Fonte: questionário da pesquisa (13 respondentes).">
+  <div class="s-body">
+    <div class="rot-head">
+      <div>
+        <p class="kicker red" data-anim style="--d:0">Questionário · rotina de compra</p>
+        <h2 class="t-h2" data-split>Como essas pessoas <span class="it">compram?</span></h2>
+      </div>
+      <p class="note" data-anim style="--d:5">Resposta mais frequente em cada pergunta, entre os 13 respondentes.</p>
+    </div>
+    <div class="rot-grid">
+      <div class="rt big" data-anim style="--d:3">
+        <svg class="ring" viewBox="0 0 170 170" aria-hidden="true"><circle class="rg-bg" cx="85" cy="85" r="70"/><circle class="rg-fg" cx="85" cy="85" r="70" style="--off:169"/><text x="85" y="85">8/13</text></svg>
+        <span class="rt-k">Frequência</span>
+        <div>
+          <div class="rt-n"><span class="count" data-to="8">8</span><small>de 13</small></div>
+          <p>compram cosméticos uma vez por mês.</p>
+          <p class="extra">Somando quem compra a cada 15 dias e toda semana, <b>11 de 13</b> compram pelo menos uma vez por mês.</p>
+        </div>
+      </div>
+      <div class="rt" data-anim style="--d:4"><span class="rt-k">Categoria</span><div><div class="rt-n"><span class="count" data-to="7">7</span><small>de 13</small></div><p>preferem produtos para cabelo.</p></div><div class="dots" data-n="7" data-of="13"></div></div>
+      <div class="rt" data-anim style="--d:5"><span class="rt-k">Gasto por compra</span><div><div class="rt-n"><span class="count" data-to="7">7</span><small>de 13</small></div><p>gastam de R$ 50 a R$ 100.</p></div><div class="dots" data-n="7" data-of="13"></div></div>
+      <div class="rt redt" data-anim style="--d:6; grid-column: 2 / 4"><span class="rt-k">Onde prefere comprar</span><div><div class="rt-n"><span class="count" data-to="8">8</span><small>de 13</small></div><p>preferem lojas físicas a sites e aplicativos.</p></div><div class="dots" data-n="8" data-of="13"></div></div>
+    </div>
+  </div>
+</section>
+
+<section data-ap class="slide t-paper2 sl-ofertas" data-id="ap-ofertas" data-title="Questionário: marcas e ofertas"
+  data-src="Fonte: questionário da pesquisa (13 respondentes). Ofertas e marcas permitiam mais de uma resposta.">
+  <div class="s-body">
+    <div class="of-head">
+      <p class="kicker red" data-anim style="--d:0">Questionário · marcas e ofertas</p>
+      <h2 class="t-h2" data-split>O que chama <span class="it">atenção</span></h2>
+    </div>
+    <div class="of-wella" data-anim style="--d:3">
+      <p class="kicker">Marca preferida</p>
+      <div>
+        <div class="wn"><span class="count" data-to="11">11</span><small> de 13</small></div>
+        <h3>escolheram <span class="it">Wella.</span></h3>
+        <p>Foi a marca mais citada, com folga.</p>
+      </div>
+    </div>
+    <div class="of-grid">
+      <div class="of" data-anim style="--d:4"><span class="of-k">Oferta</span><div><div class="of-n"><span class="count" data-to="12">12</span><small> de 13</small></div><p>se interessam por descontos em produtos.</p></div><div class="dots" data-n="12" data-of="13"></div></div>
+      <div class="of" data-anim style="--d:5"><span class="of-k">Na loja</span><div><div class="of-n"><span class="count" data-to="9">9</span><small> de 13</small></div><p>gostariam de encontrar mais promoções.</p></div><div class="dots" data-n="9" data-of="13"></div></div>
+      <div class="of" data-anim style="--d:6"><span class="of-k">O que valorizam</span><div><div class="of-n"><span class="count" data-to="7">7</span><small> de 13</small></div><p>valorizam preços acessíveis numa loja de beleza.</p></div><div class="dots" data-n="7" data-of="13"></div></div>
+      <div class="of ofkits" data-anim style="--d:7">
+        <span class="of-k" style="color:var(--muted-dark)">Kits</span>
+        <div class="kit-row">
+          <div><div class="of-n"><span class="count" data-to="5">5</span></div><p>citaram kits promocionais<small>2ª oferta mais citada; 4 dessas pessoas têm de 18 a 24 anos</small></p></div>
+          <div><div class="of-n"><span class="count" data-to="2">2</span></div><p>pediram kits personalizados<small>na pergunta sobre o que querem encontrar na loja</small></p></div>
+        </div>
+      </div>
+      <div class="of sug" data-anim style="--d:8"><span class="of-k">Sugestões abertas</span><ul><li>Maquiadores na loja com horário agendado</li><li>Divulgar as marcas parceiras</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section data-ap class="slide t-paper sl-geracoes" data-id="ap-idade" data-title="Questionário: comparação por idade"
+  data-src="Fonte: questionário da pesquisa, respostas separadas por faixa etária (6 pessoas com 35 anos ou mais; 7 com menos de 35).">
+  <div class="s-body">
+    <div class="ger-head">
+      <div>
+        <p class="kicker red" data-anim style="--d:0">Questionário · por idade</p>
+        <h2 class="t-h2" data-split>Gerações diferentes, <span class="it">hábitos diferentes</span></h2>
+      </div>
+      <p class="note" data-anim style="--d:5">São sinais numa amostra pequena, e não conclusões sobre gerações inteiras.</p>
+    </div>
+    <div class="ger-split">
+      <article class="gp old" data-anim="left" style="--d:4">
+        <div class="gp-top"><h3 class="gp-age">35 anos <span class="it">ou mais</span></h3><span class="gp-n">6 pessoas</span></div>
+        <ul>
+          <li><b>5<small>/6</small></b><span>preferem a loja física<div class="dots" data-n="5" data-of="6"></div></span></li>
+          <li><b>5<small>/6</small></b><span>compram principalmente produtos de cabelo<div class="dots" data-n="5" data-of="6"></div></span></li>
+          <li><b>4<small>/6</small></b><span>gastam R$ 100 ou mais por compra<div class="dots" data-n="4" data-of="6"></div></span></li>
+        </ul>
+      </article>
+      <article class="gp young" data-anim="right" style="--d:6">
+        <div class="gp-top"><h3 class="gp-age">Menos de <span class="it">35 anos</span></h3><span class="gp-n">7 pessoas</span></div>
+        <ul>
+          <li><b>4<small>/7</small></b><span>preferem sites e aplicativos<div class="dots" data-n="4" data-of="7"></div></span></li>
+          <li><b>5<small>/7</small></b><span>compram “um pouco de tudo”<div class="dots" data-n="5" data-of="7"></div></span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section data-ap class="slide t-paper2 sl-entrevista" data-id="ap-entrevista" data-title="Entrevista: análise completa"
+  data-src="Fonte: entrevista em profundidade com Glenda Oliveira (Zoom, 17/11/2026), análise do relatório, p. 5–6.">
+  <div class="s-body">
+    <div class="ent-left">
+      <p class="kicker red" data-anim style="--d:0">Entrevista em profundidade</p>
+      <h2 class="ent-name" data-split><span>Glenda</span> <span>Oliveira</span></h2>
+      <p class="ent-role" data-anim style="--d:4">Personal shopper de cosméticos</p>
+      <div class="ent-meta" data-anim style="--d:5"><span>Zoom · 17/11/2026</span><span>Sem vínculo com a loja</span></div>
+      <button class="evidence" type="button" data-anim style="--d:7" data-full="assets/img/relatorio/p5-entrevista.png" data-caption="Relatório, p. 5 — 3.2 Entrevista em profundidade"><img src="assets/img/relatorio/p5-entrevista.png" alt="Recorte do relatório: análise da entrevista"><span class="ev-tag">Relatório p. 5 <em>↗</em></span></button>
+      <p class="note" data-anim style="--d:9">Conversa gravada com autorização. O foco foi a venda online e os importados, especialidade dela; o que disse sobre confiança vale também para a loja física.</p>
+    </div>
+    <div class="ent-grid">
+      <div class="ent-title" data-anim style="--d:2">
+        <h3 class="t-h2">O que ela <span class="it">nos contou</span></h3>
+        <span class="tag-prop">Síntese, não citação literal</span>
+      </div>
+      <div class="ln hl" data-anim style="--d:4"><span class="ln-n">01</span><div><h4>Preço, exclusividade e confiança pesam juntos.</h4><p>Quando o produto é exclusivo, a cliente aceita pagar mais.</p></div></div>
+      <div class="ln" data-anim style="--d:5"><span class="ln-n">02</span><div><h4>A dúvida é: é original? Serve para mim?</h4><p>A cliente quer saber se o produto combina com o cabelo ou a pele dela.</p></div></div>
+      <div class="ln" data-anim style="--d:6"><span class="ln-n">03</span><div><h4>Na loja dá para testar, ser orientada e levar na hora.</h4><p>A diferença está no valor, nos sentidos, no tempo e na confiança.</p></div></div>
+      <div class="ln" data-anim style="--d:7"><span class="ln-n">04</span><div><h4>Kits personalizados mostram valor.</h4><p>Combinações que compensam para a cliente vendem mais do que só desconto.</p></div></div>
+      <div class="ln" data-anim style="--d:8"><span class="ln-n">05</span><div><h4>O pós-venda fideliza.</h4><p>Acompanhar a cliente do início ao fim, com atendimento humano.</p></div></div>
+      <div class="ln hl" data-anim style="--d:9"><span class="ln-n">06</span><div><h4>Gente real gera credibilidade.</h4><p>Vídeos de aplicação, depoimentos e microinfluenciadoras.</p></div></div>
+    </div>
+
+  </div>
+</section>
+
+<section data-ap class="slide t-ink sl-instagram" data-id="ap-perfil-ig" data-title="Instagram: perfil, bio e destaques"
+  data-src="Fonte: netnografia do perfil @espacodabelezabsb (publicações de 29/09 a 18/11/2026). Prints reais do perfil feitos em 25/11/2026.">
+  <div class="s-body">
+    <div class="ig-left">
+      <p class="kicker red" data-anim style="--d:0">Netnografia · Instagram</p>
+      <h2 class="t-h1" data-split>O que acontece do outro lado <span class="it">da tela?</span></h2>
+      <p class="ig-handle" data-anim style="--d:5">@espacodabelezabsb</p>
+      <div class="ig-stats" data-anim style="--d:6">
+        <div><b><span class="count" data-to="7260">7.260</span></b><span>seguidores</span></div>
+        <div><b><span class="count" data-to="212">212</span></b><span>publicações</span></div>
+      </div>
+      <p class="ig-when" data-anim style="--d:7">Números no momento da pesquisa. Não são dados em tempo real.</p>
+      <ul class="ig-obs">
+        <li data-anim style="--d:8">Comunicação próxima e bem-humorada</li>
+        <li data-anim style="--d:9">Vídeos gravados dentro da loja</li>
+        <li data-anim style="--d:10">Pessoas reais nos conteúdos</li>
+      </ul>
+    </div>
+    <div class="ig-right">
+      <div class="browser ig-prof reveal" style="--d:3"><div class="b-bar"><i></i><i></i><i></i><span>instagram.com/espacodabelezabsb</span></div><img src="assets/img/instagram/perfil-topo.png" alt="Print do perfil @espacodabelezabsb no Instagram, com a bio e o link do Linktree"></div>
+      <div class="browser ig-high reveal" style="--d:6"><div class="b-bar"><i></i><i></i><i></i><span>destaques</span></div><img src="assets/img/instagram/destaques.png" alt="Print dos destaques do perfil: Águas Claras, Salão de beleza, Guará II, Informações e Sobre nós"></div>
+      <span class="ann-pin" data-anim="scale" style="left:700px; top:240px; --d:9">1</span>
+      <span class="ann-pin" data-anim="scale" style="left:640px; top:384px; --d:10">2</span>
+      <span class="ann-pin" data-anim="scale" style="left:676px; top:612px; --d:11">3</span>
+      <div class="ann" data-anim="right" style="left:790px; top:150px; --d:9"><div class="ann-box"><b>1 · Bio pouco estratégica</b>Diz o que é e onde fica, mas não diz por que escolher a loja.</div></div>
+      <div class="ann" data-anim="right" style="left:790px; top:330px; --d:10"><div class="ann-box"><b>2 · Sem WhatsApp direto</b>O link leva ao Linktree, uma página que reúne vários links.</div></div>
+      <div class="ann" data-anim="right" style="left:790px; top:560px; --d:11"><div class="ann-box"><b>3 · Destaques institucionais</b>Organizados por unidade. Faltam ofertas, marcas e depoimentos.</div></div>
+      <p class="ig-print-note" data-anim style="--d:12">Prints de 25/11/2026: o perfil já mostrava 217 posts e 7.258 seguidores. Na coleta, eram 212 e 7.260.</p>
+    </div>
+  </div>
+</section>
+
+<section data-ap class="slide t-paper sl-conteudo ct" data-id="ap-conteudo" data-title="Instagram: conteúdo e vídeo"
+  data-src="Fonte: netnografia do perfil @espacodabelezabsb. Vídeo e prints reais do perfil. Legendas geradas a partir do áudio.">
+  <div class="s-body">
+    <div class="ct-left">
+      <p class="kicker red" data-anim style="--d:0">Netnografia · conteúdo</p>
+      <h2 class="t-h2" data-split>Gente de verdade, <span class="it">dentro da loja.</span></h2>
+      <p class="ct-lead" data-anim style="--d:4">Reels gravados na própria loja: humor, ofertas e produtos na mão.</p>
+      <div class="ct-posts" data-anim style="--d:8">
+        <div class="post"><div class="p-h"><img src="assets/img/marca/logo-espaco-da-beleza.jpg" alt="">espacodabelezabsb</div><div class="p-img"><img src="assets/img/instagram/reel-limpando.jpg" alt="Reel: 'Estava limpando os produtos e pensando…'"></div><div class="p-f"><svg><use href="#i-heart"/></svg><svg><use href="#i-comment"/></svg><svg><use href="#i-send"/></svg></div></div>
+        <div class="post"><div class="p-h"><img src="assets/img/marca/logo-espaco-da-beleza.jpg" alt="">espacodabelezabsb</div><div class="p-img"><img src="assets/img/instagram/reel-black-friday.jpg" alt="Reel: 'A nossa Black Friday já está on'"></div><div class="p-f"><svg><use href="#i-heart"/></svg><svg><use href="#i-comment"/></svg><svg><use href="#i-send"/></svg></div></div>
+        <div class="post"><div class="p-h"><img src="assets/img/marca/logo-espaco-da-beleza.jpg" alt="">espacodabelezabsb</div><div class="p-img"><img src="assets/img/instagram/reel-pensamentos.jpg" alt="Reel: 'Meus pensamentos o tempo todo'"></div><div class="p-f"><svg><use href="#i-heart"/></svg><svg><use href="#i-comment"/></svg><svg><use href="#i-send"/></svg></div></div>
+      </div>
+      <p class="ct-posts-cap" data-anim style="--d:9">Exemplos de Reels do perfil (print de 25/11/2026).</p>
+    </div>
+    <div class="player" data-player data-captions="promocoes" data-anim style="--d:3">
+      <div class="phone"><div class="screen">
+        <video src="assets/video/promocoes.mp4" poster="assets/video/promocoes-capa.jpg" playsinline preload="metadata" aria-label="Vídeo do perfil sobre o cartão fidelidade da loja"></video>
+        <div class="pcap" aria-live="off"></div>
+        <button class="pbig" type="button" aria-label="Reproduzir vídeo com som"><span><svg><use href="#i-play"/></svg></span></button>
+      </div></div>
+    </div>
+    <div class="ct-vidcap">
+      <p class="kicker" data-anim style="--d:4">Exemplo real</p>
+      <h3 data-anim style="--d:5">Uma pessoa da equipe, na porta da loja, explicando uma promoção.</h3>
+      <p data-anim style="--d:6">O vídeo apresenta o cartão fidelidade da loja e foi publicado em parceria com a Estação dos Cosméticos. É o formato que aproxima: gente real, linguagem simples, oferta clara.</p>
+      <span class="ct-collab" data-anim style="--d:7"><svg width="20" height="20"><use href="#i-flower"/></svg>espacodabelezabsb + estacaodoscosmeticos.df</span>
+      <p class="note" data-anim style="--d:8">Vídeo com fala: use o botão CC para mostrar ou esconder as legendas.</p>
+    </div>
+  </div>
+</section>
+
+<section data-ap class="slide t-paper2 sl-comentarios" data-id="ap-comentarios" data-title="Instagram: comentários"
+  data-src="Fonte: netnografia do perfil @espacodabelezabsb (29 comentários em cinco publicações). Usuários anonimizados.">
+  <div class="s-body">
+    <div class="com-head">
+      <p class="kicker red" data-anim style="--d:0">Netnografia · 29 comentários</p>
+      <h2 class="t-h2" data-split>O que as pessoas <span class="it">comentam?</span></h2>
+    </div>
+    <div class="com-chart" aria-label="Tipos de comentário: humor 9, elogio 6, vontade de comprar 6, emojis 4, perguntas 3, recomendação do atendimento 1">
+      <div class="cbar" data-anim style="--d:3"><span class="cb-l">Humor e reação ao vídeo</span><div class="bar" style="--d:0"><i style="--v:100%; background:var(--ink)"></i></div><span class="cb-v">9</span></div>
+      <div class="cbar" data-anim style="--d:4"><span class="cb-l">Elogio a quem aparece</span><div class="bar" style="--d:1"><i style="--v:66.7%; background:#6D6560"></i></div><span class="cb-v">6</span></div>
+      <div class="cbar buy" data-anim style="--d:5"><span class="cb-l">Vontade de comprar ou visitar a loja</span><div class="bar" style="--d:2"><i style="--v:66.7%; background:var(--red)"></i></div><span class="cb-v">6</span></div>
+      <div class="cbar" data-anim style="--d:6"><span class="cb-l">Emojis de apoio</span><div class="bar" style="--d:3"><i style="--v:44.4%; background:#A9A099"></i></div><span class="cb-v">4</span></div>
+      <div class="cbar" data-anim style="--d:7"><span class="cb-l">Pergunta sobre produto</span><div class="bar" style="--d:4"><i style="--v:33.3%; background:#D46C88"></i></div><span class="cb-v">3</span></div>
+      <div class="cbar" data-anim style="--d:8"><span class="cb-l">Recomendação do atendimento</span><div class="bar" style="--d:5"><i style="--v:11.1%; background:var(--red-deep)"></i></div><span class="cb-v">1</span></div>
+      <div data-anim style="--d:9"><div class="waffle" data-cats="9,6,6,4,3,1" aria-hidden="true"></div><p class="waffle-cap">Cada quadrado é um dos 29 comentários. Nenhum comentário negativo foi encontrado.</p></div>
+    </div>
+    <div class="com-bubbles">
+      <div class="bub float" data-anim="scale" style="left:10px; top:0; --fd:0s; --d:6"><div class="bu"><i></i>usuária · humor</div><p>“Eu quero conhecer essas tias! Kkkk”</p></div>
+      <div class="bub buy float" data-anim="scale" style="left:170px; top:170px; --fd:-1.5s; --d:8"><div class="bu"><i></i>usuária · vontade de comprar</div><p>“Preciso de um kit Loreal, pq o meu acabou. Vou passar com vocês sim.”</p></div>
+      <div class="bub float" data-anim="scale" style="left:0; top:400px; --fd:-3s; --d:9"><div class="bu"><i></i>usuário · pergunta</div><p>“Tem algum produto para homem?”</p><span class="bt">2 pessoas diferentes perguntaram</span></div>
+      <div class="bub dark float" data-anim="scale" style="left:250px; top:560px; --fd:-4.5s; --d:10"><div class="bu"><i></i>cliente · atendimento</div><p>“Eu amo os produtos e a [atendente] é maravilhosa nas dicas!”</p></div>
+    </div>
+    <div class="com-insight">
+      <div data-anim style="--d:11">O <b>humor</b> gera conversa. <b>Produto e preço</b> (como o kit Wella de R$ 379,99) geram os “eu quero”.</div>
+      <div class="warn" data-anim style="--d:12">Vontade de comprar não é venda: a pesquisa não mediu se esses comentários viraram compra.</div>
+    </div>
+    <button class="evidence" type="button" data-anim style="--d:13" data-full="assets/img/relatorio/p6-grafico-comentarios.png" data-caption="Relatório, p. 6 — Gráfico 2: tipos de comentário no Instagram"><img src="assets/img/relatorio/p6-grafico-comentarios.png" alt="Recorte do relatório: Gráfico 2"><span class="ev-tag">Gráfico original · p. 6 <em>ampliar ↗</em></span></button>
+  </div>
+</section>
+
+<section data-ap class="slide t-red sl-recomendacoes" data-id="ap-recs" data-title="Recomendações: visão geral">
+  <div class="s-body">
+    <div class="rec-head">
+      <p class="kicker" data-anim style="--d:0">Recomendações</p>
+      <h2 class="t-h1" data-split>O que o Espaço da Beleza pode fazer <span class="it">agora?</span></h2>
+      <p class="t-lead" data-anim style="--d:6">Cinco ações que juntam o que atrai (preço e oferta) com o que faz voltar (orientação e confiança).</p>
+    </div>
+    <div class="rec-list">
+      <div class="rl" data-anim="right" style="--d:4"><span class="rl-n">01</span><div><h3>Kits por necessidade</h3><p>Ressecamento, transição capilar, coloração.</p></div></div>
+      <div class="rl" data-anim="right" style="--d:5"><span class="rl-n">02</span><div><h3>Conteúdo que ajuda a escolher</h3><p>Vídeos curtos com a equipe indicando produtos.</p></div></div>
+      <div class="rl" data-anim="right" style="--d:6"><span class="rl-n">03</span><div><h3>WhatsApp estratégico</h3><p>Lista de transmissão para promoções e reposição.</p></div></div>
+      <div class="rl" data-anim="right" style="--d:7"><span class="rl-n">04</span><div><h3>Avaliações atualizadas</h3><p>QR code no caixa e respostas às avaliações.</p></div></div>
+      <div class="rl" data-anim="right" style="--d:8"><span class="rl-n">05</span><div><h3>Instagram mais funcional</h3><p>Bio, WhatsApp direto, destaques e respostas.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section data-ap class="slide t-paper sl-rec1" data-id="ap-rec-1" data-title="Recomendações 01 e 02"
+  data-src="Recomendações 1 e 2 do relatório (3.5). Mockups ilustrativos: não são materiais implementados pela empresa. Fotos: quadros reais dos vídeos da loja.">
+  <div class="s-body">
+    <div class="rd-head">
+      <div><p class="kicker red" data-anim style="--d:0">Recomendações · atrair com valor</p></div>
+      <div class="rd-index" data-anim style="--d:1" aria-hidden="true"><span class="on">01</span><span class="on">02</span><span>03</span><span>04</span><span>05</span></div>
+    </div>
+    <div class="rd-cols">
+      <article class="rd l" data-anim style="--d:2">
+        <span class="tag-prop">Proposta</span>
+        <span class="rd-n">01</span>
+        <h3>Kits por <span class="it">necessidade</span></h3>
+        <p>Kits com preço dentro do que a maioria gasta (até R$ 200), mostrando quanto a cliente economiza em relação aos produtos avulsos.</p>
+        <div class="mock">
+          <div class="kits">
+            <div class="kit k1" data-anim style="--d:5"><span class="k-top"><svg><use href="#i-drop"/></svg>Kit</span><h4>Resseca&shy;mento</h4><span class="k-price">Preço do kit · economia vs. avulsos</span></div>
+            <div class="kit k2" data-anim style="--d:6"><span class="k-top"><svg><use href="#i-leaf"/></svg>Kit</span><h4>Transição <span class="it">capilar</span></h4><span class="k-price">Preço do kit · economia vs. avulsos</span></div>
+            <div class="kit k3" data-anim style="--d:7"><span class="k-top"><svg><use href="#i-palette"/></svg>Kit</span><h4>Coloração</h4><span class="k-price">Preço do kit · economia vs. avulsos</span></div>
+          </div>
+          <p class="mock-cap">Ilustração conceitual. Produtos e preços seriam definidos pela loja.</p>
+        </div>
+      </article>
+      <article class="rd d" data-anim style="--d:4">
+        <span class="tag-prop">Proposta</span>
+        <span class="rd-n">02</span>
+        <h3>Conteúdo que ajuda <span class="it">a escolher</span></h3>
+        <p>Uma série de vídeos curtos com a equipe: o problema, o produto, como usar e o preço. Junta o que já chama atenção (pessoas) com o que gera vontade de comprar (oferta).</p>
+        <div class="mock">
+          <div class="reels">
+            <div class="reel" data-anim style="--d:6"><img src="assets/img/loja/prateleira-rosa.jpg" alt=""><span class="r-n">1</span><span class="r-t">O problema</span></div>
+            <div class="reel" data-anim style="--d:7"><img src="assets/img/loja/prateleira-cabelo.jpg" alt=""><span class="r-n">2</span><span class="r-t">O produto</span></div>
+            <div class="reel" data-anim style="--d:8"><img src="assets/img/loja/escovas.jpg" alt=""><span class="r-n">3</span><span class="r-t">Como usar</span></div>
+            <div class="reel" data-anim style="--d:9"><img src="assets/img/loja/maquiagem.jpg" alt=""><span class="r-n">4</span><span class="r-t">O preço</span></div>
+          </div>
+          <p class="mock-cap">Roteiro sugerido para cada vídeo. Imagens: quadros reais da loja.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section data-ap class="slide t-paper2 sl-rec2" data-id="ap-rec-2" data-title="Recomendações 03 e 04"
+  data-src="Recomendações 3 e 4 do relatório (3.5). Mockups ilustrativos: conversa, nomes e QR code não são reais nem funcionais.">
+  <div class="s-body">
+    <div class="rd-head">
+      <div><p class="kicker red" data-anim style="--d:0">Recomendações · cuidar depois da compra</p></div>
+      <div class="rd-index" data-anim style="--d:1" aria-hidden="true"><span>01</span><span>02</span><span class="on">03</span><span class="on">04</span><span>05</span></div>
+    </div>
+    <div class="rd-cols">
+      <article class="rd l" data-anim style="--d:2; background:var(--paper)">
+        <span class="tag-prop">Proposta</span>
+        <span class="rd-n">03</span>
+        <h3>WhatsApp <span class="it">estratégico</span></h3>
+        <p>Uma lista de transmissão por unidade, só com clientes que autorizarem, para avisar promoções e lembrar da reposição.</p>
+        <div class="mock">
+          <div class="wa" data-anim style="--d:5">
+            <div class="wa-h"><span class="av"><img src="assets/img/marca/logo-espaco-da-beleza.jpg" alt=""></span><div><b>Espaço da Beleza · Guará II</b><small>lista de transmissão</small></div></div>
+            <div class="wa-b">
+              <span class="sys">Só recebe quem autorizou no caixa</span>
+              <div class="msg" data-anim style="--d:7">Oi, [nome]! Faz um mês que você levou seu shampoo. Quer que a gente separe a reposição? <span class="t">10:02</span></div>
+              <div class="msg" data-anim style="--d:9">Promoção da semana na unidade: <em>[produto]</em> por <em>[preço]</em>. Passa aqui que a gente te ajuda a escolher. <span class="t">10:03</span></div>
+            </div>
+          </div>
+          <p class="mock-cap">Exemplo de mensagem. Textos entre colchetes seriam preenchidos pela loja.</p>
+        </div>
+      </article>
+      <article class="rd d" data-anim style="--d:4">
+        <span class="tag-prop">Proposta</span>
+        <span class="rd-n">04</span>
+        <h3>Avaliações <span class="it">atualizadas</span></h3>
+        <p>Pedir avaliações no Google com um QR code no caixa e responder a quem avaliar. Hoje, 20 das 22 avaliações têm três anos ou mais.</p>
+        <div class="mock">
+          <div class="qr-stand">
+            <div class="qr-card" data-anim style="--d:6">
+              <span class="qc-k">Espaço da Beleza</span>
+              <h4>Gostou do atendimento? Conta pra gente.</h4>
+              <svg class="qr qr-illu" viewBox="0 0 29 29" aria-hidden="true"></svg>
+              <div class="stars-s">★★★★★</div>
+              <span class="qr-lab">QR ilustrativo · não funcional</span>
+            </div>
+            <div class="qr-steps">
+              <div data-anim style="--d:7"><span>1</span>Display com QR code no caixa</div>
+              <div data-anim style="--d:8"><span>2</span>A equipe convida quem foi bem atendida</div>
+              <div data-anim style="--d:9"><span>3</span>A loja responde a cada avaliação</div>
+            </div>
+          </div>
+          <p class="mock-cap">Ilustração conceitual de display de balcão.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section data-ap class="slide t-paper sl-rec3" data-id="ap-rec-3" data-title="Recomendação 05"
+  data-src="Recomendação 5 do relatório (3.5). À esquerda, prints reais do perfil (25/11/2026); à direita, mockup ilustrativo, sem link real.">
+  <div class="s-body">
+    <div class="rd-head">
+      <div>
+        <p class="kicker red" data-anim style="--d:0">Recomendações · 05</p>
+        <h2 class="t-h2" data-split>Instagram mais <span class="it">funcional</span></h2>
+      </div>
+      <div class="rd-index" data-anim style="--d:1" aria-hidden="true"><span>01</span><span>02</span><span>03</span><span>04</span><span class="on">05</span></div>
+    </div>
+    <div class="bio-cols">
+      <div class="bio-side bio-before" data-anim="left" style="--d:3">
+        <p class="b-k"><i></i>Hoje · print real</p>
+        <div class="print"><img src="assets/img/instagram/bio.png" alt="Print da bio atual do perfil"></div>
+        <div class="print"><img src="assets/img/instagram/destaques.png" alt="Print dos destaques atuais do perfil"></div>
+        <p class="mock-cap" style="margin-top:16px">Diz o que é e onde fica. Link para o Linktree. Destaques por unidade.</p>
+      </div>
+      <div class="bio-arrow" data-anim="scale" style="--d:5" aria-hidden="true"><span>→</span></div>
+      <div class="bio-side after" data-anim="right" style="--d:6">
+        <p class="b-k"><i></i>Proposta · mockup</p>
+        <span class="tag-prop">Proposta</span>
+        <div class="bio-card">
+          <div class="bc-top"><span class="bc-av"><img src="assets/img/marca/logo-espaco-da-beleza.jpg" alt=""></span><div><div class="bc-name">espacodabelezabsb</div><div class="bc-cat">Loja de cosméticos e salão · Brasília</div></div></div>
+          <p class="bc-bio"><span class="hl">A gente te ajuda a escolher o produto certo para o seu cabelo.</span><br>Águas Claras · Guará II · Estação dos Cosméticos (210 Sul)</p>
+          <span class="bc-link"><svg><use href="#i-wa"/></svg>Fale com a gente no WhatsApp</span>
+          <div class="bc-hl">
+            <div><i><svg><use href="#i-tag"/></svg></i>Ofertas</div>
+            <div><i><svg><use href="#i-star"/></svg></i>Marcas</div>
+            <div><i><svg><use href="#i-chat"/></svg></i>Depoimentos</div>
+            <div><i><svg><use href="#i-pin"/></svg></i>Unidades</div>
+          </div>
+        </div>
+        <div class="bio-checks">
+          <div>Uma frase que diz por que escolher a loja: a orientação</div>
+          <div>Link direto para o WhatsApp</div>
+          <div>Destaques de ofertas, marcas e depoimentos</div>
+          <div>Resposta rápida às perguntas, inclusive sobre produtos masculinos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-ap class="slide t-paper sl-limitacoes" data-id="ap-limitacoes" data-title="Limitações da pesquisa"
+  data-src="Fonte: relatório da pesquisa, 3.6 Limitações.">
+  <div class="s-body">
+    <div class="lim-head">
+      <p class="kicker red" data-anim style="--d:0">Com transparência</p>
+      <h2 class="t-h1" data-split>Limitações <span class="it">da pesquisa</span></h2>
+      <p class="t-lead" data-anim style="--d:5">Os resultados valem para quem participou. Eles apontam caminhos, mas não falam por toda a clientela.</p>
+      <div class="lim-next" data-anim style="--d:9">
+        <p class="kicker">Próximo passo</p>
+        <p>Entrevistar diretamente as clientes da loja.</p>
+      </div>
+    </div>
+    <div class="lim-list">
+      <div class="lm" data-anim style="--d:3"><span class="lm-n">01</span><div><h4>Apenas 13 respostas</h4><p>Uma amostra pequena para generalizar.</p></div></div>
+      <div class="lm" data-anim style="--d:4"><span class="lm-n">02</span><div><h4>Amostra por conveniência</h4><p>Não probabilística: sem sorteio.</p></div></div>
+      <div class="lm" data-anim style="--d:5"><span class="lm-n">03</span><div><h4>Maioria de clientes atuais</h4><p>O link circulou em grupos ligados à loja.</p></div></div>
+      <div class="lm" data-anim style="--d:6"><span class="lm-n">04</span><div><h4>Duas respostas quase idênticas</h4><p>Enviadas com dois minutos de diferença; podem ser da mesma pessoa.</p></div></div>
+      <div class="lm" data-anim style="--d:7"><span class="lm-n">05</span><div><h4>Uma única entrevista</h4><p>Com uma especialista focada em importados.</p></div></div>
+      <div class="lm" data-anim style="--d:8"><span class="lm-n">06</span><div><h4>Poucas publicações observadas</h4><p>Cinco publicações do Instagram.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ANEXO — PRINTS DO RELATÓRIO ===================================== -->
+<section class="slide t-paper2 sl-gal" data-id="ap-relatorio" data-ap data-title="Prints do relatório e gráficos originais"
+  data-src="Recortes do relatório entregue à professora. Clique em qualquer um para ampliar.">
+  <div class="s-body">
+    <div class="gal-head">
+      <div>
+        <p class="kicker red" data-anim style="--d:0">Evidências</p>
+        <h2 class="t-h2" data-split>Prints do relatório <span class="it">e gráficos originais</span></h2>
+      </div>
+      <a class="m-chip dark" href="assets/docs/relatorio-pesquisa-espaco-da-beleza.pdf" target="_blank" rel="noopener" data-anim style="--d:3">Abrir o relatório completo (PDF) ↗</a>
+    </div>
+    <div class="gal" data-anim style="--d:2">
+      <button class="evidence" type="button" data-full="assets/img/relatorio/p2-dados-secundarios.png" data-caption="Relatório, p. 2 — 1.4 Dados secundários"><span class="gi"><img src="assets/img/relatorio/p2-dados-secundarios.png" alt=""></span><span class="ev-tag">p. 2 · Dados secundários <em>↗</em></span></button>
+      <button class="evidence" type="button" data-full="assets/img/relatorio/p3-instrumentos.png" data-caption="Relatório, p. 2–3 — 2.1 Instrumentos utilizados"><span class="gi"><img src="assets/img/relatorio/p3-instrumentos.png" alt=""></span><span class="ev-tag">p. 3 · Instrumentos <em>↗</em></span></button>
+      <button class="evidence" type="button" data-full="assets/img/relatorio/p3-amostragem.png" data-caption="Relatório, p. 3 — 2.3 Amostragem"><span class="gi"><img src="assets/img/relatorio/p3-amostragem.png" alt=""></span><span class="ev-tag">p. 3 · Amostragem <em>↗</em></span></button>
+      <button class="evidence" type="button" data-full="assets/img/relatorio/p4-tabela-questionario.png" data-caption="Relatório, p. 4 — 3.1 Questionário: respostas mais frequentes e fatores de compra"><span class="gi"><img src="assets/img/relatorio/p4-tabela-questionario.png" alt=""></span><span class="ev-tag">p. 4 · Tabelas do questionário <em>↗</em></span></button>
+      <button class="evidence" type="button" data-full="assets/img/relatorio/p4-grafico-fatores.png" data-caption="Relatório, p. 4 — Gráfico 1: o que mais influencia a compra"><span class="gi"><img src="assets/img/relatorio/p4-grafico-fatores.png" alt=""></span><span class="ev-tag">p. 4 · Gráfico 1 <em>↗</em></span></button>
+      <button class="evidence" type="button" data-full="assets/img/relatorio/p5-entrevista.png" data-caption="Relatório, p. 5 — 3.2 Entrevista em profundidade"><span class="gi"><img src="assets/img/relatorio/p5-entrevista.png" alt=""></span><span class="ev-tag">p. 5 · Entrevista <em>↗</em></span></button>
+      <button class="evidence" type="button" data-full="assets/img/relatorio/p6-grafico-comentarios.png" data-caption="Relatório, p. 6 — Gráfico 2: tipos de comentário no Instagram"><span class="gi"><img src="assets/img/relatorio/p6-grafico-comentarios.png" alt=""></span><span class="ev-tag">p. 6 · Gráfico 2 <em>↗</em></span></button>
+      <button class="evidence" type="button" data-full="assets/img/relatorio/p7-grafico-comparacao.png" data-caption="Relatório, p. 7 — Gráfico 3: o que as clientes dizem x o que elogiam"><span class="gi"><img src="assets/img/relatorio/p7-grafico-comparacao.png" alt=""></span><span class="ev-tag">p. 7 · Gráfico 3 <em>↗</em></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ANEXO — REFERÊNCIAS ============================================= -->
+<section class="slide t-paper sl-refs" data-id="ap-referencias" data-ap data-title="Referências"
+  data-src="Referências do relatório entregue à professora.">
+  <div class="s-body">
+    <div class="refs-left">
+      <p class="kicker red" data-anim style="--d:0">Fundamentação</p>
+      <h2 class="t-h1" data-split>Referên<span class="it">cias</span></h2>
+      <p class="t-lead" data-anim style="--d:4">As mesmas fontes citadas no relatório entregue à professora.</p>
+      <a class="m-chip dark" href="assets/docs/relatorio-pesquisa-espaco-da-beleza.pdf" target="_blank" rel="noopener" data-anim style="--d:6">Abrir o relatório completo (PDF) ↗</a>
+    </div>
+    <ol class="refs-list" data-anim style="--d:3">
+      <li>ABIHPEC. <i>Perfil do consumidor de beleza e cuidados pessoais no Brasil.</i> 2026. Disponível em: abihpec.org.br/perfil-consumidor-cosmeticos-brasil. Acesso em: 19 nov. 2026.</li>
+      <li>ABIHPEC. <i>Tamanho do mercado de beleza e cuidados pessoais no Brasil.</i> 2026. Disponível em: abihpec.org.br/tamanho-mercado-cosmeticos-brasil-2026. Acesso em: 19 nov. 2026.</li>
+      <li>IPEDF CODEPLAN. <i>Pesquisa Distrital por Amostra de Domicílios Ampliada (PDAD-A 2024): Águas Claras.</i> Brasília, 2025. Disponível em: pdad.ipe.df.gov.br. Acesso em: 19 nov. 2026.</li>
+      <li>IPEDF CODEPLAN. <i>Pesquisa Distrital por Amostra de Domicílios Ampliada (PDAD-A 2024): Guará.</i> Brasília, 2025. Disponível em: pdad.ipe.df.gov.br. Acesso em: 19 nov. 2026.</li>
+      <li>MALHOTRA, Naresh K. <i>Pesquisa de marketing: uma orientação aplicada.</i> Porto Alegre: Bookman.</li>
+      <li class="prim"><b>Dados primários:</b> questionário (13 respostas, 3 a 18/11/2026), entrevista com Glenda Oliveira (17/11/2026) e netnografia do Instagram e do Google. Transcrição e respostas nos anexos do relatório.</li>
+    </ol>
+  </div>
+</section>
+
+    </div><!-- /stage -->
+  </div><!-- /viewport -->
+
+  <div class="wipe" id="wipe" aria-hidden="true"></div>
+  <div class="blackout" id="blackout" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="ap-bar" id="apBar" hidden><span class="ap-k">Dados e evidências da pesquisa</span><button type="button" id="apBack"><svg><use href="#i-left"/></svg>Voltar ao slide <b>01</b></button></div>
+
+  <nav class="hud" id="hud" aria-label="Controles da apresentação">
+    <button class="hbtn tip" type="button" id="hMenu" data-tip="Capítulos (M)" aria-label="Abrir capítulos" aria-expanded="false"><svg><use href="#i-menu"/></svg><span class="lbl">Capítulos</span></button>
+    <button class="hbtn tip" type="button" id="hNotes" data-tip="Notas das apresentadoras (N)" aria-label="Abrir notas" aria-pressed="false"><svg><use href="#i-notes"/></svg></button>
+    <span class="hsep"></span>
+    <button class="hbtn nav tip" type="button" id="hPrev" data-tip="Anterior (←)" aria-label="Slide anterior"><svg><use href="#i-left"/></svg></button>
+    <span class="hcount" id="hCount" aria-live="polite">01 / 14</span>
+    <button class="hbtn nav tip" type="button" id="hNext" data-tip="Próximo (→ ou espaço)" aria-label="Próximo slide"><svg><use href="#i-right"/></svg></button>
+    <span class="hsep"></span>
+    <button class="hbtn tip" type="button" id="hFs" data-tip="Tela cheia (F)" aria-label="Entrar ou sair da tela cheia"><svg class="fs-on"><use href="#i-fs"/></svg></button>
+    <button class="hbtn tip" type="button" id="hMotion" data-tip="Reduzir animações" aria-label="Reduzir animações" aria-pressed="false"><svg><use href="#i-motion"/></svg></button>
+    <button class="hbtn tip" type="button" id="hRestart" data-tip="Reiniciar" aria-label="Voltar ao primeiro slide"><svg><use href="#i-restart"/></svg></button>
+    <button class="hbtn tip" type="button" id="hExit" data-tip="Sair (Esc)" aria-label="Sair do modo apresentação"><svg><use href="#i-exit"/></svg></button>
+  </nav>
+
+  <aside class="panel left" id="chapters" aria-label="Capítulos" aria-hidden="true">
+    <div class="panel-h"><h2>Capítulos</h2><button class="xbtn" type="button" data-close="chapters" aria-label="Fechar capítulos"><svg><use href="#i-close"/></svg></button></div>
+    <ol class="chap-list" id="chapList"></ol>
+    <div class="panel-foot"><kbd>←</kbd> <kbd>→</kbd> navegar · <kbd>espaço</kbd> avançar · <kbd>D</kbd> dados e evidências · <kbd>F</kbd> tela cheia · <kbd>N</kbd> notas · <kbd>B</kbd> tela preta · <kbd>Esc</kbd> sair</div>
+  </aside>
+
+  <aside class="panel right" id="notes" aria-label="Notas das apresentadoras" aria-hidden="true">
+    <div class="panel-h"><h2>Notas · roteiro</h2><button class="xbtn" type="button" data-close="notes" aria-label="Fechar notas"><svg><use href="#i-close"/></svg></button></div>
+    <div class="notes-body" id="notesBody"></div>
+    <div class="notes-tools"><button type="button" id="btnPresenter">Abrir janela da apresentadora</button></div>
+  </aside>
+</main>
+
+<!-- Ampliação dos prints -->
+<div class="modal" id="lightbox" role="dialog" aria-modal="true" aria-label="Print ampliado do relatório" aria-hidden="true">
+  <button class="xbtn" type="button" data-close="lightbox" aria-label="Fechar ampliação (Esc)"><svg><use href="#i-close"/></svg></button>
+  <figure class="lb-fig"><img id="lbImg" src="" alt=""><figcaption id="lbCap"></figcaption></figure>
+</div>
+
+<!-- Referências -->
+<div class="modal" id="refs" role="dialog" aria-modal="true" aria-labelledby="refsTitle" aria-hidden="true">
+  <div class="doc">
+    <button class="xbtn" type="button" data-close="refs" aria-label="Fechar referências (Esc)"><svg><use href="#i-close"/></svg></button>
+    <h2 id="refsTitle">Referências</h2>
+    <p class="doc-sub">As mesmas fontes do relatório entregue à professora.</p>
+    <ol class="refs">
+      <li>ABIHPEC. <i>Perfil do consumidor de beleza e cuidados pessoais no Brasil.</i> 2026. Disponível em: abihpec.org.br/perfil-consumidor-cosmeticos-brasil. Acesso em: 19 nov. 2026.</li>
+      <li>ABIHPEC. <i>Tamanho do mercado de beleza e cuidados pessoais no Brasil.</i> 2026. Disponível em: abihpec.org.br/tamanho-mercado-cosmeticos-brasil-2026. Acesso em: 19 nov. 2026.</li>
+      <li>IPEDF CODEPLAN. <i>Pesquisa Distrital por Amostra de Domicílios Ampliada (PDAD-A 2024): Águas Claras.</i> Brasília, 2025. Disponível em: pdad.ipe.df.gov.br. Acesso em: 19 nov. 2026.</li>
+      <li>IPEDF CODEPLAN. <i>Pesquisa Distrital por Amostra de Domicílios Ampliada (PDAD-A 2024): Guará.</i> Brasília, 2025. Disponível em: pdad.ipe.df.gov.br. Acesso em: 19 nov. 2026.</li>
+      <li>MALHOTRA, Naresh K. <i>Pesquisa de marketing: uma orientação aplicada.</i> Porto Alegre: Bookman.</li>
+    </ol>
+    <h3>Dados primários</h3>
+    <p>Questionário com 13 respostas (3 a 18/11/2026), entrevista em profundidade com Glenda Oliveira (17/11/2026) e netnografia do perfil @espacodabelezabsb e das avaliações da loja no Google. A transcrição da entrevista e as respostas do formulário estão nos anexos do relatório.</p>
+    <div class="doc-actions">
+      <a class="primary" href="assets/docs/relatorio-pesquisa-espaco-da-beleza.pdf" target="_blank" rel="noopener">Abrir o relatório completo (PDF) ↗</a>
+      <button type="button" data-close="refs">Voltar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Atalhos -->
+<div class="modal" id="keys" role="dialog" aria-modal="true" aria-labelledby="keysTitle" aria-hidden="true">
+  <div class="doc">
+    <button class="xbtn" type="button" data-close="keys" aria-label="Fechar atalhos (Esc)"><svg><use href="#i-close"/></svg></button>
+    <h2 id="keysTitle">Atalhos e controles</h2>
+    <p class="doc-sub">A apresentação nunca avança sozinha. Quem controla o ritmo é vocês.</p>
+    <dl class="keys">
+      <dt><kbd>→</kbd> <kbd>espaço</kbd> <kbd>PageDown</kbd></dt><dd>Avançar (funciona também com passadores de slide)</dd>
+      <dt><kbd>←</kbd> <kbd>PageUp</kbd></dt><dd>Voltar</dd>
+      <dt><kbd>Home</kbd> / <kbd>End</kbd></dt><dd>Primeiro / último slide</dd>
+      <dt><kbd>M</kbd></dt><dd>Menu de capítulos</dd>
+      <dt><kbd>D</kbd></dt><dd>Dados e evidências da pesquisa (material de consulta, fora da sequência)</dd>
+      <dt><kbd>F</kbd></dt><dd>Entrar ou sair da tela cheia</dd>
+      <dt><kbd>N</kbd></dt><dd>Notas das apresentadoras (não aparecem na apresentação)</dd>
+      <dt><kbd>B</kbd></dt><dd>Tela preta (aperte de novo para voltar)</dd>
+      <dt><kbd>Esc</kbd></dt><dd>Fecha ampliações e painéis; nos Dados e evidências, volta ao slide; depois sai da tela cheia e, na última vez, do modo apresentação</dd>
+      <dt>Arrastar</dt><dd>No tablet, deslize para os lados para trocar de slide</dd>
+    </dl>
+    <h3>Um único slide tem etapa</h3>
+    <p>No slide 11 (o grande insight), um clique revela a frase final. Os pontinhos no canto inferior direito indicam a etapa.</p>
+    <h3>Dados e evidências</h3>
+    <p>Os dados completos ficam numa seção à parte, fora dos 14 slides: abra pelo menu de capítulos, pela tecla D ou pelos botões “+” no rodapé de cada slide. O botão “Voltar ao slide” retorna para onde vocês estavam.</p>
+    <div class="doc-actions"><button type="button" data-close="keys">Entendi</button></div>
+  </div>
+</div>
+
+</div><!-- /app -->
+
+<script src="assets/js/legendas.js"></script>
+<script src="assets/js/roteiro.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
