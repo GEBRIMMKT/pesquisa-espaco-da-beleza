@@ -6,6 +6,10 @@ Funciona **sem internet**: fontes, imagens, vídeos e o relatório estão todos 
 
 **Versão enxuta:** 14 slides principais, pensados para cerca de 8 min 40 s (o limite é 10 min). Os dados completos ficam numa seção à parte, **Dados e evidências da pesquisa**, que não entra na sequência.
 
+## Online (plano B)
+
+A mesma apresentação está publicada em **https://gebrimmkt.github.io/pesquisa-espaco-da-beleza/** e abre em qualquer computador com internet. Na sala, prefiram a versão desta pasta, que não depende da rede.
+
 ## Jeito mais fácil
 
 1. Dê dois cliques em **▶ ABRIR APRESENTAÇÃO** (o ícone de aplicativo desta pasta).
